@@ -126,6 +126,25 @@
   .controls-wrap{ background:var(--navy-deep); position:sticky; top:0; z-index:50; box-shadow:0 12px 28px -16px rgba(0,0,0,.5);}
   .controls{ max-width:1180px; margin:0 auto; padding:22px 6vw; display:flex; flex-direction:column; gap:18px; }
 
+  .board-search-hint{
+    padding:13px 26px; font-family:'Barlow Condensed', sans-serif; font-size:14px; letter-spacing:.3px;
+    color:var(--navy-deep); background:rgba(244,194,43,.16); border-bottom:1px solid var(--line);
+  }
+  .board-search-hint b{ font-weight:700; }
+  .week-switch{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; padding-bottom:18px; border-bottom:1px solid rgba(246,239,220,.1); }
+  .week-label{ font-family:'Barlow Condensed', sans-serif; text-transform:uppercase; letter-spacing:2.5px; font-size:12px; color:rgba(246,239,220,.5); font-weight:700; white-space:nowrap; }
+  .week-pills{ display:flex; gap:10px; flex-wrap:wrap; }
+  .week-pill{
+    display:inline-flex; flex-direction:column; gap:1px; align-items:flex-start;
+    background:rgba(255,255,255,.04); border:1.5px solid rgba(246,239,220,.16); border-radius:12px;
+    padding:8px 18px; cursor:pointer; transition:all .2s ease; color:var(--paper); text-align:left;
+  }
+  .week-pill .wp-title{ font-family:'Barlow Condensed', sans-serif; font-weight:700; font-size:15px; letter-spacing:.4px; }
+  .week-pill .wp-period{ font-family:'Barlow Condensed', sans-serif; font-size:11px; color:rgba(246,239,220,.5); letter-spacing:.6px; text-transform:uppercase; }
+  .week-pill:hover{ border-color:rgba(244,194,43,.45); background:rgba(255,255,255,.07); }
+  .week-pill.active{ border-color:var(--gold); background:rgba(244,194,43,.12); box-shadow:0 0 0 1px rgba(244,194,43,.22) inset; }
+  .week-pill.active .wp-period{ color:var(--gold); }
+
   .company-switch{ display:flex; gap:14px; flex-wrap:wrap; }
   .company-btn{
     flex:1 1 240px; display:flex; align-items:center; gap:14px;
@@ -444,7 +463,7 @@
       corretores, gerentes e diretores.
     </p>
     <div class="hero-meta">
-      <div class="meta-chip"><b id="metaTotalVendas">–</b> vendas confirmadas no mês</div>
+      <div class="meta-chip"><b id="metaTotalVendas">–</b> vendas <span id="metaPeriodoLabel">na 1ª semana</span></div>
       <div class="meta-chip"><b id="metaTotalPessoas">–</b> nomes pontuando no ranking</div>
       <div class="meta-chip"><b>2ª-feira</b> apuração às 16h</div>
       <div class="meta-chip"><b>R$10mil</b> em prêmios no topo</div>
@@ -456,6 +475,10 @@
 
 <div class="controls-wrap">
   <div class="controls">
+    <div class="week-switch" id="weekSwitch">
+      <span class="week-label">Apuração semanal</span>
+      <div class="week-pills" id="weekPills"></div>
+    </div>
     <div class="company-switch" id="companySwitch">
       <button class="company-btn active" data-company="mais">
         <img src="assets/logo-econ-mais.png" alt="Logo Econ Mais">
@@ -483,9 +506,9 @@
 <!-- ===================== PODIUM ===================== -->
 <section class="section reveal" id="podio">
   <div class="section-head">
-    <div class="tag">Top 6 da categoria</div>
-    <h3>O pódio de junho</h3>
-    <p>Os seis primeiros colocados da categoria — pontuação por vendas confirmadas em junho/2026 combinando volume, prioridade de empreendimento e bônus semanais.</p>
+    <div class="tag" id="podiumTag">Top 6 · 1ª semana</div>
+    <h3 id="podiumTitle">O pódio da 1ª semana de Junho</h3>
+    <p>Os seis primeiros colocados da categoria — pontuação por vendas confirmadas na semana selecionada, combinando volume, prioridade de empreendimento e bônus semanais.</p>
     <div class="active-context" id="activeContext">
       <img id="ctxLogo" src="assets/logo-econ-mais.png" alt="">
       <span id="ctxLabel">ECON MAIS · CORRETORES</span>
@@ -508,6 +531,7 @@
   </div>
 
   <div class="board">
+    <div class="board-search-hint" id="boardSearchHint" style="display:none">🔎 Resultados da busca em <b>toda a classificação</b> — incluindo o pódio. Limpe o campo para voltar à visão completa.</div>
     <div class="board-head">
       <div>Pos.</div>
       <div>Nome</div>
@@ -643,7 +667,7 @@
   </div>
 </footer>
 
-<script src="assets/ranking-data.js"></script>
+<script src="assets/ranking-data.js?v=20260609a"></script>
 <script>
   // ------------------------------------------------------------------
   // RANKING_DATA vem de assets/ranking-data.js, gerado a partir da aba
@@ -669,7 +693,11 @@
     ["#b06b3a","#7a4a26"], ["#7a3bb2","#532578"], ["#1f8fae","#136277"],
   ];
 
-  let state = { company: 'mais', role: 'corretores' };
+  let state = { semana: (typeof SEMANA_ATUAL !== 'undefined' ? SEMANA_ATUAL : Object.keys(SEMANAS)[0]), company: 'mais', role: 'corretores' };
+
+  // ---- helpers de semana ----
+  function weekRanking(){ return SEMANAS[state.semana].ranking; }
+  function weekCampeoes(){ return SEMANAS[state.semana].campeoes; }
 
   function initials(name){
     const clean = name.replace(/[+]/g,'').trim();
@@ -702,23 +730,24 @@
 
   // ---- header counts ----
   function updateHeaderCounts(){
-    const totalVendas = c => Object.values(RANKING_DATA[c]).reduce((acc, list) =>
+    const rk = weekRanking();
+    const totalVendas = c => Object.values(rk[c]).reduce((acc, list) =>
       acc + list.reduce((s,p)=> s + p.vendas, 0), 0) / 3; // each sale counted in 3 roles, divide back
     const tMais = totalVendas('mais');
     const tVendas = totalVendas('vendas');
-    document.getElementById('countMais').textContent   = `${fmtVendas(tMais)} vendas em jun/26`;
-    document.getElementById('countVendas').textContent = `${fmtVendas(tVendas)} vendas em jun/26`;
+    document.getElementById('countMais').textContent   = `${fmtVendas(tMais)} vendas na semana`;
+    document.getElementById('countVendas').textContent = `${fmtVendas(tVendas)} vendas na semana`;
     document.getElementById('metaTotalVendas').textContent = fmtVendas(tMais + tVendas);
 
     const allNames = new Set();
     ['mais','vendas'].forEach(c => ['corretores','gerentes','diretores'].forEach(r =>
-      RANKING_DATA[c][r].forEach(p => allNames.add(c+'|'+r+'|'+p.nome))
+      rk[c][r].forEach(p => allNames.add(c+'|'+r+'|'+p.nome))
     ));
     document.getElementById('metaTotalPessoas').textContent = allNames.size;
   }
 
   function updateRoleCounts(){
-    const data = RANKING_DATA[state.company];
+    const data = weekRanking()[state.company];
     document.getElementById('cntCorretores').textContent = data.corretores.length;
     document.getElementById('cntGerentes').textContent   = data.gerentes.length;
     document.getElementById('cntDiretores').textContent  = data.diretores.length;
@@ -774,8 +803,8 @@
   const championsBar = document.getElementById('championsBar');
   function renderChampions(){
     const c = state.company;
-    const cv = CAMPEOS[c].vendasSemana;
-    const ci = CAMPEOS[c].indicacoes;
+    const cv = weekCampeoes()[c].vendasSemana;
+    const ci = weekCampeoes()[c].indicacoes;
     const roleLabels = {corretores:'corretor', gerentes:'gerente', diretores:'diretor'};
     const vendasNames = Object.entries(cv).map(([role, nome]) => {
       if(nome === null){
@@ -809,13 +838,19 @@
   const emptyState = document.getElementById('emptyState');
   let currentRest = [];
 
+  let fullList = [];
   function renderBoard(list){
-    boardBody.innerHTML = '';
-    currentRest = list.slice(6);
-    const maxPts = list.length ? list[0].pontos : 1;
+    fullList = list;
+    applySearch();
+  }
 
-    currentRest.forEach((item, i) => {
-      const pos = i + 7;
+  function renderRows(entries){
+    boardBody.innerHTML = '';
+    currentRest = entries.map(e => e.item);
+
+    entries.forEach((entry, i) => {
+      const item = entry.item;
+      const pos = entry.pos;
       const palette = avatarPalette[(i+3) % avatarPalette.length];
       const { prio, pronto, padrao } = scoreBreakdown(item.empreendimentos);
       const total = prio + pronto + padrao;
@@ -863,7 +898,6 @@
     });
 
     animateCounters();
-    applySearch();
   }
 
   function animateCounters(){
@@ -890,27 +924,73 @@
   const searchInput = document.getElementById('searchInput');
   function applySearch(){
     const term = searchInput.value.trim().toLowerCase();
-    const rows = boardBody.querySelectorAll('.board-row');
-    let visible = 0;
-    rows.forEach(row => {
-      const show = row.dataset.nome.includes(term);
-      row.classList.toggle('hide', !show);
-      if(show) visible++;
-    });
-    emptyState.classList.toggle('show', term.length > 0 && visible === 0 && currentRest.length > 0);
+    const podium = document.getElementById('podiumWrap');
+    const ctx = document.getElementById('activeContext');
+    const champs = document.getElementById('championsBar');
+    const boardHead = document.getElementById('boardSearchHint');
+
+    if(!term){
+      // modo normal: pódio visível + tabela a partir da 7ª posição
+      if(podium) podium.style.display = '';
+      if(ctx) ctx.style.display = '';
+      if(champs) champs.style.display = '';
+      if(boardHead) boardHead.style.display = 'none';
+      renderRows(fullList.slice(6).map((item, i) => ({ item, pos: i + 7 })));
+      emptyState.classList.remove('show');
+      return;
+    }
+
+    // modo busca: oculta pódio e lista TODOS os colocados (incl. top 6) com o ranking real
+    if(podium) podium.style.display = 'none';
+    if(ctx) ctx.style.display = 'none';
+    if(champs) champs.style.display = 'none';
+    if(boardHead) boardHead.style.display = '';
+    const matches = fullList
+      .map((item, i) => ({ item, pos: i + 1 }))
+      .filter(e => e.item.nome.toLowerCase().includes(term));
+    renderRows(matches);
+    emptyState.classList.toggle('show', matches.length === 0);
   }
   searchInput.addEventListener('input', applySearch);
 
   // ---- render orchestration ----
   function renderAll(){
-    const list = RANKING_DATA[state.company][state.role];
+    const sem = SEMANAS[state.semana];
+    const list = weekRanking()[state.company][state.role];
     document.getElementById('ctxLogo').src = COMPANY_LOGO[state.company];
     document.getElementById('ctxLabel').textContent = `${COMPANY_LABEL[state.company].toUpperCase()} · ${ROLE_LABEL[state.role].toUpperCase()}`;
+    // título do pódio por semana
+    const pt = document.getElementById('podiumTitle');
+    if(pt) pt.textContent = `O pódio da ${sem.label}`;
+    const ptag = document.getElementById('podiumTag');
+    if(ptag) ptag.textContent = `Top 6 · ${sem.label}`;
+    const periodo = document.getElementById('metaPeriodoLabel');
+    if(periodo) periodo.textContent = `na ${sem.label.toLowerCase()}`;
     updateRoleCounts();
     searchInput.value = '';
     renderPodium(list);
     renderBoard(list);
     renderChampions();
+  }
+
+  // ---- seletor de semanas ----
+  const weekPills = document.getElementById('weekPills');
+  function renderWeekPills(){
+    const keys = Object.keys(SEMANAS).sort((a,b) => (SEMANAS[a].ordem||0) - (SEMANAS[b].ordem||0));
+    weekPills.innerHTML = keys.map(k => `
+      <button class="week-pill${k===state.semana?' active':''}" data-semana="${k}">
+        <span class="wp-title">${SEMANAS[k].label}</span>
+        <span class="wp-period">${SEMANAS[k].periodo}</span>
+      </button>`).join('');
+    weekPills.querySelectorAll('.week-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.semana = btn.dataset.semana;
+        weekPills.querySelectorAll('.week-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        updateHeaderCounts();
+        renderAll();
+      });
+    });
   }
 
   // ---- controls wiring ----
@@ -931,6 +1011,7 @@
     });
   });
 
+  renderWeekPills();
   updateHeaderCounts();
   renderAll();
 

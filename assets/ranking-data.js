@@ -1284,3 +1284,29 @@ const CAMPEOS = {
     ]
   }
 };
+
+// ============================================================
+//  APURACAO SEMANAL — registro das semanas da Copa Econ 2026
+//  A campanha dura 1 mes e e apurada toda semana. Para adicionar
+//  uma nova semana, crie os objetos de ranking/campeoes da semana
+//  (mesmo formato de RANKING_DATA / CAMPEOS) e registre um novo
+//  bloco aqui. Depois atualize SEMANA_ATUAL para a semana corrente.
+//
+//  Exemplo para a 2a semana:
+//    const RANKING_DATA_S2 = { mais:{...}, vendas:{...} };
+//    const CAMPEOS_S2 = { mais:{...}, vendas:{...} };
+//    SEMANAS["semana-2"] = { label:"2a semana de Junho",
+//      periodo:"08 a 14 de junho", ordem:2,
+//      ranking: RANKING_DATA_S2, campeoes: CAMPEOS_S2 };
+//    SEMANA_ATUAL = "semana-2";
+// ============================================================
+const SEMANAS = {
+  "semana-1": {
+    label: "1ª semana de Junho",
+    periodo: "01 a 07 de junho",
+    ordem: 1,
+    ranking: RANKING_DATA,
+    campeoes: CAMPEOS
+  }
+};
+let SEMANA_ATUAL = "semana-1";
