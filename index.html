@@ -85,18 +85,9 @@
   }
   .brand-text h1.wordmark{ font-size:clamp(20px, 2.4vw, 28px); color:var(--navy-deep); }
 
-  .live-pill{
-    display:inline-flex; align-items:center; gap:9px;
-    background:rgba(10,23,48,.86); color:var(--paper);
-    border:1px solid rgba(244,194,43,.4); border-radius:999px; padding:9px 18px 9px 14px;
-    font-family:'Barlow Condensed', sans-serif; font-weight:600; letter-spacing:1.6px; font-size:13px; text-transform:uppercase;
-    box-shadow: var(--shadow);
-  }
-  .live-dot{ width:9px; height:9px; border-radius:50%; background:#33d67a; animation:pulse 1.8s infinite; }
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(51,214,122,.55);}
-    70%{box-shadow:0 0 0 9px rgba(51,214,122,0);}
-    100%{box-shadow:0 0 0 0 rgba(51,214,122,0);}
+  .logo-25anos-header{
+    height:52px; width:auto;
+    filter: drop-shadow(0 4px 12px rgba(10,15,30,.4));
   }
 
   .hero{ position:relative; z-index:3; margin-top:64px; max-width:880px; }
@@ -290,7 +281,7 @@
   }
   .board-head .al-r{ text-align:right; }
   .board-row{
-    display:grid; grid-template-columns: 64px 1.7fr 1.3fr 1fr 110px; gap:14px; align-items:center; padding:16px 26px;
+    display:grid; grid-template-columns: 64px 2fr 1.2fr 1fr 110px; gap:14px; align-items:center; padding:16px 26px;
     border-top:1px solid var(--line); transition: background .18s ease; position:relative;
   }
   .board-row:hover{ background: rgba(244,194,43,.1); }
@@ -305,7 +296,8 @@
     width:46px; height:46px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center;
     font-family:'Bungee'; font-size:13px; color:var(--paper); box-shadow: 0 6px 14px -4px rgba(10,15,30,.35);
   }
-  .who-text h5{ font-size:15.5px; font-weight:700; color:var(--navy-deep); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .who-text{ min-width:0; overflow:hidden; flex:1; }
+  .who-text h5{ font-size:15px; font-weight:700; color:var(--navy-deep); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%; }
   .flag-indicacao, .flag-indicacao-podio{
     display:inline-flex; align-items:center; gap:3px; margin-left:7px; padding:2px 8px; border-radius:20px;
     background:linear-gradient(120deg, var(--gold), var(--gold-deep)); color:var(--navy-deep);
@@ -317,11 +309,11 @@
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:280px;}
 
   .breakdown{ display:flex; flex-direction:column; gap:6px; }
-  .stack{ height:9px; border-radius:6px; overflow:hidden; display:flex; background:rgba(28,26,20,.08); }
-  .stack i{ display:block; height:100%; }
-  .seg-prioridade{ background:linear-gradient(90deg, var(--green), var(--green-deep)); }
-  .seg-pronto{ background:linear-gradient(90deg, var(--gold), var(--gold-deep)); }
-  .seg-padrao{ background:linear-gradient(90deg, var(--navy), var(--navy-deep)); }
+  .stack{ height:6px; border-radius:4px; overflow:hidden; display:flex; background:rgba(22,41,78,.1); }
+  .stack i{ display:block; height:100%; transition:width .6s ease; }
+  .seg-prioridade{ background:linear-gradient(90deg, #3a9e6a, #2a7a50); opacity:.85; }
+  .seg-pronto{ background:linear-gradient(90deg, #c9a53a, #a07d1a); opacity:.8; }
+  .seg-padrao{ background:linear-gradient(90deg, #5a7fbf, #3a5a94); opacity:.65; }
   .seg-empty{ background:transparent; }
   .breakdown small{ font-family:'Barlow Condensed'; font-size:11.5px; letter-spacing:.4px; color:#8a836b; font-weight:600;}
   .breakdown small b{ color:var(--green-deep); font-weight:700; }
@@ -445,7 +437,7 @@
         <h1 class="wordmark">Copa Econ 2026</h1>
       </div>
     </div>
-    <div class="live-pill"><span class="live-dot"></span> Apuração de junho/2026</div>
+    <img src="assets/logo-econ-25anos.png" alt="Econ 25 Anos" class="logo-25anos-header">
   </div>
 
   <div class="ball" aria-hidden="true"></div>
