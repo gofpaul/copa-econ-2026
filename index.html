@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copa Econ 2026 — Ranking Oficial · Econ Mais &amp; Econ Vendas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Inline&family=Teko:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#f4c22b;
+    --gold-deep:#d99e00;
+    --green:#168a45;
+    --green-deep:#0a5c30;
+    --navy:#16294e;
+    --navy-deep:#0a1730;
+    --paper:#f6efdc;
+    --paper-dark:#ece1c6;
+    --ink:#1c1a14;
+    --line: rgba(28,26,20,.14);
+    --gold-soft: rgba(244,194,43,.18);
+    --shadow: 0 18px 50px -18px rgba(10,15,30,.45);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:
+      radial-gradient(ellipse at top left, rgba(244,194,43,.12), transparent 45%),
+      radial-gradient(ellipse at bottom right, rgba(22,138,69,.14), transparent 50%),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Barlow', sans-serif;
+    overflow-x:hidden;
+  }
+
+  body::after{
+    content:"";
+    position:fixed; inset:0; pointer-events:none; z-index:999; opacity:.05; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  img, svg{display:block;}
+  h1,h2,h3,h4{font-family:'Bungee', cursive; letter-spacing:.5px; line-height:1.05;}
+  .num{font-family:'Teko', sans-serif; font-weight:600;}
+  ::selection{background:var(--gold); color:var(--navy-deep);}
+
+  .torn{ position:relative; height:64px; width:100%; margin-top:-1px; }
+  .torn svg{width:100%; height:100%; display:block;}
+
+  .pitch-strip{
+    height:10px;
+    background:repeating-linear-gradient(115deg, var(--green) 0 38px, var(--green-deep) 38px 76px);
+    box-shadow: inset 0 -3px 8px rgba(0,0,0,.25);
+  }
+
+  /* =================== HEADER =================== */
+  header{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(10,23,48,.0) 0%, rgba(10,23,48,.55) 100%),
+      linear-gradient(125deg, var(--gold) 0%, var(--gold) 32%, var(--green) 33%, var(--green) 64%, var(--navy) 65%, var(--navy) 100%);
+    padding: 26px 6vw 90px;
+    overflow:hidden;
+  }
+  header::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(8deg, rgba(255,255,255,.06) 0 2px, transparent 2px 26px),
+      repeating-linear-gradient(-12deg, rgba(0,0,0,.05) 0 1px, transparent 1px 34px);
+    mix-blend-mode:overlay; pointer-events:none;
+  }
+
+  .topbar{ display:flex; align-items:center; justify-content:space-between; position:relative; z-index:3; flex-wrap:wrap; gap:18px; }
+  .brand{ display:flex; align-items:center; gap:16px; }
+  .brand .crest{
+    width:60px; height:auto; flex-shrink:0;
+    filter: drop-shadow(0 8px 16px rgba(10,15,30,.35));
+  }
+  .brand-text .kicker{
+    font-family:'Barlow Condensed', sans-serif; font-size:13px; letter-spacing:4px; text-transform:uppercase;
+    color:var(--navy-deep); opacity:.75; font-weight:600;
+  }
+  .brand-text h1.wordmark{ font-size:clamp(20px, 2.4vw, 28px); color:var(--navy-deep); }
+
+  .live-pill{
+    display:inline-flex; align-items:center; gap:9px;
+    background:rgba(10,23,48,.86); color:var(--paper);
+    border:1px solid rgba(244,194,43,.4); border-radius:999px; padding:9px 18px 9px 14px;
+    font-family:'Barlow Condensed', sans-serif; font-weight:600; letter-spacing:1.6px; font-size:13px; text-transform:uppercase;
+    box-shadow: var(--shadow);
+  }
+  .live-dot{ width:9px; height:9px; border-radius:50%; background:#33d67a; animation:pulse 1.8s infinite; }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(51,214,122,.55);}
+    70%{box-shadow:0 0 0 9px rgba(51,214,122,0);}
+    100%{box-shadow:0 0 0 0 rgba(51,214,122,0);}
+  }
+
+  .hero{ position:relative; z-index:3; margin-top:64px; max-width:880px; }
+  .hero .eyebrow{
+    font-family:'Barlow Condensed', sans-serif; font-size:16px; letter-spacing:5px; text-transform:uppercase;
+    color:var(--navy-deep); font-weight:700; opacity:.8; display:flex; align-items:center; gap:12px; margin-bottom:14px;
+  }
+  .hero .eyebrow::before{ content:""; display:inline-block; width:46px; height:3px; background:var(--navy-deep); opacity:.55; }
+  .hero h2{
+    font-size:clamp(36px, 6.6vw, 78px); color:var(--paper);
+    text-shadow: 0 6px 0 rgba(10,23,48,.18), 0 18px 40px rgba(10,15,30,.35);
+    -webkit-text-stroke: 2px var(--navy-deep); paint-order: stroke fill;
+  }
+  .hero h2 .accent{ color:var(--gold); -webkit-text-stroke: 2px var(--navy-deep);}
+  .hero p.lead{ margin-top:22px; font-size:clamp(15px,1.6vw,18px); max-width:600px; line-height:1.65; color:rgba(10,23,48,.86); font-weight:500; }
+  .hero p.lead strong{color:var(--navy-deep);}
+  .hero-meta{ margin-top:30px; display:flex; gap:14px; flex-wrap:wrap; }
+  .meta-chip{
+    background:rgba(255,255,255,.55); backdrop-filter: blur(6px); border:1px solid rgba(10,23,48,.18); border-radius:12px;
+    padding:10px 16px; font-family:'Barlow Condensed', sans-serif; font-weight:600; font-size:14.5px; letter-spacing:.4px;
+    color:var(--navy-deep); display:flex; align-items:center; gap:8px;
+  }
+  .meta-chip b{font-family:'Teko'; font-size:19px; font-weight:600;}
+
+  .ball{
+    position:absolute; right:6vw; top:18px; width:128px; height:128px; border-radius:50%;
+    background: radial-gradient(circle at 32% 28%, #fff 0 8%, #efe9d8 9% 100%);
+    box-shadow: var(--shadow), inset -14px -14px 30px rgba(10,15,30,.18); opacity:.9; z-index:2;
+  }
+  .ball::before{
+    content:""; position:absolute; inset:0; border-radius:50%;
+    background-image:
+      radial-gradient(circle at 50% 18%, transparent 13%, var(--navy-deep) 14% 16%, transparent 17%),
+      radial-gradient(circle at 22% 46%, transparent 13%, var(--navy-deep) 14% 16%, transparent 17%),
+      radial-gradient(circle at 78% 46%, transparent 13%, var(--navy-deep) 14% 16%, transparent 17%),
+      radial-gradient(circle at 38% 78%, transparent 13%, var(--navy-deep) 14% 16%, transparent 17%),
+      radial-gradient(circle at 64% 78%, transparent 13%, var(--navy-deep) 14% 16%, transparent 17%);
+  }
+  @media (max-width: 880px){ .ball{display:none;} }
+
+  /* =================== CONTROLS / SELECTORS =================== */
+  .controls-wrap{ background:var(--navy-deep); position:sticky; top:0; z-index:50; box-shadow:0 12px 28px -16px rgba(0,0,0,.5);}
+  .controls{ max-width:1180px; margin:0 auto; padding:22px 6vw; display:flex; flex-direction:column; gap:18px; }
+
+  .company-switch{ display:flex; gap:14px; flex-wrap:wrap; }
+  .company-btn{
+    flex:1 1 240px; display:flex; align-items:center; gap:14px;
+    background:rgba(255,255,255,.045); border:1.5px solid rgba(246,239,220,.16); border-radius:16px;
+    padding:14px 20px; cursor:pointer; transition:all .2s ease; text-align:left;
+  }
+  .company-btn:hover{ border-color:rgba(244,194,43,.45); background:rgba(255,255,255,.07); }
+  .company-btn.active{ border-color:var(--gold); background:rgba(244,194,43,.12); box-shadow:0 0 0 1px rgba(244,194,43,.25) inset; }
+  .company-btn img{ height:34px; width:auto; flex-shrink:0; background:var(--paper); border-radius:8px; padding:5px 10px; }
+  .company-btn .meta{ display:flex; flex-direction:column; gap:2px; }
+  .company-btn .meta span.label{
+    font-family:'Barlow Condensed'; letter-spacing:2px; text-transform:uppercase; font-size:11.5px; font-weight:700; color:rgba(246,239,220,.5);
+  }
+  .company-btn .meta span.count{ font-family:'Teko'; font-size:21px; color:var(--paper); font-weight:600; line-height:1; }
+  .company-btn.active .meta span.label{ color:var(--gold); }
+
+  .sub-row{ display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between; }
+  .role-row{ display:flex; gap:10px; flex-wrap:wrap; }
+  .chip{
+    appearance:none; border:1.5px solid rgba(246,239,220,.25); background:transparent; color:rgba(246,239,220,.8);
+    font-family:'Barlow Condensed', sans-serif; font-weight:600; letter-spacing:1px; text-transform:uppercase; font-size:13.5px;
+    padding:10px 18px; border-radius:999px; cursor:pointer; transition:all .18s ease; display:inline-flex; align-items:center; gap:8px;
+  }
+  .chip:hover{ border-color:var(--gold); color:var(--paper); }
+  .chip.active{ background:var(--gold); border-color:var(--gold); color:var(--navy-deep); }
+  .chip .count-tag{
+    background:rgba(10,23,48,.35); border-radius:999px; padding:1px 8px; font-size:11.5px; font-family:'Teko'; font-weight:600;
+  }
+  .chip.active .count-tag{ background:rgba(10,23,48,.18); color:var(--navy-deep); }
+
+  .search-box{ position:relative; flex:1 1 240px; max-width:340px; }
+  .search-box input{
+    width:100%; background:rgba(255,255,255,.06); border:1.5px solid rgba(244,194,43,.35); border-radius:12px;
+    padding:12px 16px 12px 42px; color:var(--paper); font-family:'Barlow', sans-serif; font-size:14.5px; font-weight:500; outline:none;
+    transition:border-color .2s, background .2s;
+  }
+  .search-box input::placeholder{color:rgba(246,239,220,.45);}
+  .search-box input:focus{ border-color:var(--gold); background:rgba(255,255,255,.1);}
+  .search-box svg{ position:absolute; left:14px; top:50%; transform:translateY(-50%); width:17px; height:17px; opacity:.55; }
+
+  .data-note{
+    font-family:'Barlow Condensed'; font-size:12.5px; letter-spacing:.6px; color:rgba(246,239,220,.5); font-weight:500;
+    display:flex; align-items:flex-start; gap:8px; line-height:1.5;
+  }
+  .data-note .dot{ width:5px; height:5px; border-radius:50%; background:var(--gold); margin-top:6px; flex-shrink:0; }
+
+  /* =================== SECTIONS =================== */
+  .section{ max-width:1180px; margin:0 auto; padding:64px 6vw; }
+  .section-head{ text-align:center; margin-bottom:46px;}
+  .section-head .tag{ font-family:'Barlow Condensed'; letter-spacing:5px; text-transform:uppercase; font-weight:700; font-size:14px; color:var(--green-deep); }
+  .section-head h3{ font-size:clamp(28px,4vw,46px); color:var(--navy-deep); margin-top:8px;}
+  .section-head p{ max-width:600px; margin:14px auto 0; color:#5b5848; font-weight:500; line-height:1.6;}
+  .section-head .active-context{
+    display:inline-flex; align-items:center; gap:10px; margin-top:18px;
+    background:var(--paper-dark); border:1px solid var(--line); border-radius:999px; padding:8px 18px 8px 10px;
+  }
+  .section-head .active-context img{ height:22px; width:auto; flex-shrink:0; }
+  .section-head .active-context span{
+    font-family:'Barlow Condensed'; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; font-size:12.5px; color:var(--navy-deep);
+  }
+
+  /* =================== PODIUM =================== */
+  .podium{ display:flex; flex-direction:column; align-items:center; gap:clamp(8px,2vw,20px); margin-top:8px; }
+  .podium-row{ display:flex; align-items:flex-end; justify-content:center; gap:clamp(8px, 2.5vw, 22px); flex-wrap:wrap; }
+
+  .podium-card{ text-align:center; position:relative; }
+  .podium-card.top3{ width:clamp(160px, 22vw, 230px); }
+  .podium-card.sub3{ width:clamp(120px, 16vw, 170px); }
+
+  .podium-card .avatar{
+    border-radius:50%; margin:0 auto 12px; display:flex; align-items:center; justify-content:center;
+    font-family:'Bungee'; color:var(--paper); box-shadow: 0 8px 20px -4px rgba(10,15,30,.4); border:3px solid var(--paper); position:relative; z-index:2;
+  }
+  .top3 .avatar{ width:80px; height:80px; font-size:20px; border-width:4px; }
+  .sub3 .avatar{ width:56px; height:56px; font-size:14px; }
+
+  .podium-card .crown{ position:absolute; top:-34px; left:50%; transform:translateX(-50%); font-size:28px; filter:drop-shadow(0 6px 8px rgba(0,0,0,.25)); }
+  .podium-card h4{ color:var(--navy-deep); margin-bottom:2px; line-height:1.2; padding:0 4px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:16px; }
+  .sub3 h4{ font-size:13px; }
+  .podium-card .empresa{ font-family:'Barlow Condensed'; font-size:12px; letter-spacing:1.2px; text-transform:uppercase; color:#7a7460; font-weight:600; margin-bottom:10px; }
+  .sub3 .empresa{ font-size:10.5px; margin-bottom:6px; }
+  .podium-card .pts{ font-family:'Teko'; font-weight:600; color:var(--navy-deep); line-height:1; }
+  .top3 .pts{ font-size:36px; }
+  .sub3 .pts{ font-size:26px; }
+  .podium-card .pts span{ font-family:'Barlow Condensed'; font-size:11px; letter-spacing:2px; color:#8a836b; display:block; margin-top:2px;}
+
+  .riser{
+    margin-top:14px; border-radius:12px 12px 0 0; position:relative; display:flex; align-items:flex-start; justify-content:center; padding-top:12px;
+    box-shadow: 0 -6px 0 rgba(10,23,48,.08) inset, var(--shadow); overflow:hidden;
+  }
+  .riser::before{ content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.12) 0 10px, transparent 10px 22px); mix-blend-mode:overlay; }
+  .riser .place{ font-family:'Bungee'; color:rgba(10,23,48,.28); -webkit-text-stroke:1.5px rgba(255,255,255,.5); }
+  .p1 .riser{ height:160px; background:linear-gradient(160deg, var(--gold) 0%, var(--gold-deep) 100%);}
+  .p2 .riser{ height:118px; background:linear-gradient(160deg, #c9d3df 0%, #98a4b4 100%);}
+  .p3 .riser{ height:96px;  background:linear-gradient(160deg, #d79a66 0%, #b06b3a 100%);}
+  .p4 .riser{ height:60px;  background:linear-gradient(160deg, #3c5271 0%, #253347 100%);}
+  .p5 .riser{ height:50px;  background:linear-gradient(160deg, #3d5244 0%, #273830 100%);}
+  .p6 .riser{ height:42px;  background:linear-gradient(160deg, #5a4e3d 0%, #3d3428 100%);}
+  .p1 .riser .place{ font-size:60px; }
+  .p2 .riser .place, .p3 .riser .place{ font-size:46px; }
+  .p4 .riser .place, .p5 .riser .place, .p6 .riser .place{ font-size:30px; }
+  .p1 .avatar{ background:linear-gradient(160deg, var(--green) 0%, var(--green-deep) 100%);}
+  .p2 .avatar{ background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);}
+  .p3 .avatar{ background:linear-gradient(160deg, #b9722f 0%, #8a4f1d 100%);}
+  .p4 .avatar{ background:linear-gradient(160deg, #1f8fae 0%, #136277 100%);}
+  .p5 .avatar{ background:linear-gradient(160deg, #7a3bb2 0%, #532578 100%);}
+  .p6 .avatar{ background:linear-gradient(160deg, #9a4444 0%, #6b2e2e 100%);}
+  .p1{ order:2; } .p2{ order:1; } .p3{ order:3; }
+  @media (max-width:640px){ .p1,.p2,.p3{ order:initial; } }
+
+  .podium-empty{
+    width:100%; text-align:center; padding:60px 20px; color:#8a836b; font-weight:600; font-family:'Barlow Condensed';
+    letter-spacing:1px; text-transform:uppercase; font-size:15px;
+  }
+
+  /* =================== CHAMPIONS BAR =================== */
+  .champions-bar{
+    display:flex; gap:14px; flex-wrap:wrap; margin:28px 0 0;
+    background:var(--navy-deep); border-radius:18px; padding:18px 22px;
+    box-shadow: var(--shadow); border:1px solid rgba(244,194,43,.18);
+  }
+  .champion-card{ flex:1 1 220px; display:flex; align-items:center; gap:14px; }
+  .champion-card + .champion-card{ border-left:1px solid rgba(246,239,220,.1); padding-left:14px; }
+  @media(max-width:600px){ .champion-card+.champion-card{ border-left:none; border-top:1px solid rgba(246,239,220,.1); padding-left:0; padding-top:14px; } }
+  .champ-icon{ font-size:26px; flex-shrink:0; }
+  .champ-info{ display:flex; flex-direction:column; gap:4px; }
+  .champ-label{
+    font-family:'Barlow Condensed'; letter-spacing:2px; text-transform:uppercase; font-size:10.5px;
+    color:rgba(246,239,220,.45); font-weight:700;
+  }
+  .champ-names{ display:flex; flex-wrap:wrap; gap:6px; }
+  .champ-name{
+    display:inline-flex; align-items:center; gap:6px;
+    background:rgba(255,255,255,.07); border:1px solid rgba(246,239,220,.14); border-radius:8px;
+    padding:5px 10px; font-family:'Bungee'; font-size:12px; color:var(--paper);
+  }
+  .champ-name em{ font-style:normal; font-family:'Barlow Condensed'; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(246,239,220,.5); font-weight:700; }
+  .champ-tie{ border-color:rgba(246,239,220,.08); background:rgba(255,255,255,.03); }
+  .champ-tie em{ color:rgba(246,239,220,.3); font-style:italic !important; }
+
+  /* =================== RANKING TABLE =================== */
+  .board{ background:var(--paper); border:1.5px solid var(--line); border-radius:20px; box-shadow: var(--shadow); overflow:hidden; }
+  .board-head{
+    display:grid; grid-template-columns: 64px 1.7fr 1.3fr 1fr 110px; gap:14px; align-items:center; padding:18px 26px;
+    background:var(--navy-deep); color:var(--paper);
+    font-family:'Barlow Condensed'; letter-spacing:2px; text-transform:uppercase; font-weight:600; font-size:12.5px;
+  }
+  .board-head .al-r{ text-align:right; }
+  .board-row{
+    display:grid; grid-template-columns: 64px 1.7fr 1.3fr 1fr 110px; gap:14px; align-items:center; padding:16px 26px;
+    border-top:1px solid var(--line); transition: background .18s ease; position:relative;
+  }
+  .board-row:hover{ background: rgba(244,194,43,.1); }
+  .board-row.hide{ display:none; }
+
+  .pos{ display:flex; align-items:center; gap:10px; }
+  .pos .rank-num{ font-family:'Teko'; font-size:28px; font-weight:600; color:var(--navy-deep); min-width:30px;}
+  .medal-icon{ font-size:16px; }
+
+  .who{ display:flex; align-items:center; gap:14px; min-width:0; }
+  .chip-avatar{
+    width:46px; height:46px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    font-family:'Bungee'; font-size:13px; color:var(--paper); box-shadow: 0 6px 14px -4px rgba(10,15,30,.35);
+  }
+  .who-text h5{ font-size:15.5px; font-weight:700; color:var(--navy-deep); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .flag-indicacao, .flag-indicacao-podio{
+    display:inline-flex; align-items:center; gap:3px; margin-left:7px; padding:2px 8px; border-radius:20px;
+    background:linear-gradient(120deg, var(--gold), var(--gold-deep)); color:var(--navy-deep);
+    font-family:'Barlow Condensed'; font-size:10px; font-weight:800; letter-spacing:.7px; text-transform:uppercase;
+    white-space:nowrap; box-shadow:0 2px 7px rgba(217,158,0,.4); vertical-align:middle;
+  }
+  .flag-indicacao-podio{ display:inline-flex; margin:4px 0 0; }
+  .who-text .tagline{ font-family:'Barlow Condensed'; font-size:12px; letter-spacing:.4px; color:#8a836b; text-transform:uppercase; font-weight:600;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:280px;}
+
+  .breakdown{ display:flex; flex-direction:column; gap:6px; }
+  .stack{ height:9px; border-radius:6px; overflow:hidden; display:flex; background:rgba(28,26,20,.08); }
+  .stack i{ display:block; height:100%; }
+  .seg-prioridade{ background:linear-gradient(90deg, var(--green), var(--green-deep)); }
+  .seg-pronto{ background:linear-gradient(90deg, var(--gold), var(--gold-deep)); }
+  .seg-padrao{ background:linear-gradient(90deg, var(--navy), var(--navy-deep)); }
+  .seg-empty{ background:transparent; }
+  .breakdown small{ font-family:'Barlow Condensed'; font-size:11.5px; letter-spacing:.4px; color:#8a836b; font-weight:600;}
+  .breakdown small b{ color:var(--green-deep); font-weight:700; }
+  .breakdown small em{ font-style:normal; color:var(--navy); font-weight:700; }
+
+  .vgv-cell{ display:flex; flex-direction:column; gap:2px; }
+  .vgv-cell .v{ font-family:'Teko'; font-size:21px; color:var(--navy-deep); font-weight:600; }
+  .vgv-cell small{ font-family:'Barlow Condensed'; font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; color:#9a937c; font-weight:700;}
+
+  .total{ text-align:right; }
+  .total .num{ font-size:34px; color:var(--navy-deep); }
+  .total small{ display:block; font-family:'Barlow Condensed'; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#9a937c; font-weight:700; margin-top:-4px;}
+
+  .empty-state{ padding:60px 20px; text-align:center; color:#8a836b; font-weight:600; display:none; }
+  .empty-state.show{ display:block; }
+
+  @media (max-width: 880px){
+    .board-head{ display:none; }
+    .board-row{ grid-template-columns: 1fr; gap:10px; padding:20px 22px; }
+    .total{ text-align:left; display:flex; align-items:baseline; gap:10px;}
+    .total small{ margin-top:0; }
+    .breakdown{ order:5; }
+    .vgv-cell{ flex-direction:row; align-items:baseline; gap:8px; }
+  }
+
+  .methodology{
+    margin-top:28px; background:var(--paper-dark); border:1px dashed rgba(28,26,20,.25); border-radius:14px; padding:18px 22px;
+    font-size:13px; line-height:1.7; color:#5b5848; font-weight:500;
+  }
+  .methodology b{ color:var(--navy-deep); }
+  .methodology .legend-row{ display:flex; gap:18px; flex-wrap:wrap; margin-top:10px; }
+  .methodology .legend-item{ display:flex; align-items:center; gap:8px; font-family:'Barlow Condensed'; letter-spacing:.6px; font-weight:600; font-size:12.5px; }
+  .methodology .swatch{ width:14px; height:14px; border-radius:4px; display:inline-block; }
+
+  /* =================== SCORING LEGEND =================== */
+  .score-grid{ display:grid; gap:18px; grid-template-columns: repeat(5, 1fr); }
+  @media (max-width:980px){ .score-grid{ grid-template-columns: repeat(2, 1fr);} }
+  @media (max-width:560px){ .score-grid{ grid-template-columns: 1fr;} }
+  .score-card{
+    background:var(--paper); border:1.5px solid var(--line); border-radius:16px; padding:24px 20px; position:relative; overflow:hidden;
+    box-shadow: 0 14px 30px -16px rgba(10,15,30,.25); transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .score-card:hover{ transform:translateY(-6px); box-shadow:0 20px 38px -16px rgba(10,15,30,.35); }
+  .score-card .badge{
+    width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-family:'Teko'; font-size:24px; font-weight:600; color:var(--paper); margin-bottom:16px; box-shadow: 0 8px 18px -6px rgba(10,15,30,.4);
+  }
+  .score-card .badge small{ font-family:'Barlow Condensed'; font-size:9px; letter-spacing:1px; display:block; margin-top:-2px;}
+  .c1 .badge{ background:linear-gradient(150deg,var(--green),var(--green-deep)); }
+  .c2 .badge{ background:linear-gradient(150deg,var(--gold),var(--gold-deep)); color:var(--navy-deep);}
+  .c3 .badge{ background:linear-gradient(150deg,var(--navy),var(--navy-deep)); }
+  .c4 .badge{ background:linear-gradient(150deg,#c98750,#8a4f1d); }
+  .c5 .badge{ background:linear-gradient(150deg,#9b5fd1,#6a2f9e); }
+  .score-card h5{ font-size:16px; color:var(--navy-deep); margin-bottom:6px; line-height:1.3;}
+  .score-card p{ font-size:13.5px; color:#7a7460; line-height:1.5; font-weight:500;}
+  .score-card .status-tag{
+    display:inline-block; margin-top:10px; font-family:'Barlow Condensed'; font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase;
+    font-weight:700; padding:4px 10px; border-radius:999px;
+  }
+  .status-on{ background:rgba(22,138,69,.14); color:var(--green-deep); border:1px solid rgba(22,138,69,.35); }
+  .status-off{ background:rgba(28,26,20,.08); color:#8a836b; border:1px solid rgba(28,26,20,.16); }
+
+  /* =================== PRIZES =================== */
+  .prizes{ display:grid; grid-template-columns: 1fr 1fr; gap:24px; }
+  @media (max-width:760px){ .prizes{ grid-template-columns:1fr; } }
+  .prize-card{ border-radius:18px; padding:30px 28px; position:relative; overflow:hidden; color:var(--paper); }
+  .prize-card.corretores{ background:linear-gradient(150deg, var(--green) 0%, var(--green-deep) 100%);}
+  .prize-card.gerentes{ background:linear-gradient(150deg, var(--navy) 0%, var(--navy-deep) 100%);}
+  .prize-card::after{ content:""; position:absolute; right:-40px; bottom:-40px; width:160px; height:160px; border-radius:50%; background:rgba(244,194,43,.14); }
+  .prize-card h4{ font-size:22px; margin-bottom:16px; position:relative; z-index:1;}
+  .prize-list{ list-style:none; display:flex; flex-direction:column; gap:11px; position:relative; z-index:1;}
+  .prize-list li{ display:flex; align-items:center; gap:12px; font-weight:600; font-size:15px;}
+  .prize-list .medal{
+    width:34px; height:34px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    font-family:'Teko'; font-size:17px; font-weight:600; background:rgba(255,255,255,.16); color:var(--gold); border:1.5px solid rgba(244,194,43,.5);
+  }
+  .prize-card .fine{ margin-top:18px; font-size:11.5px; opacity:.7; font-weight:500; position:relative; z-index:1; line-height:1.5; }
+
+  /* =================== RULES STRIP =================== */
+  .rules{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1.5px solid var(--line); border-radius:16px; overflow:hidden; }
+  @media (max-width:880px){ .rules{ grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .rules{ grid-template-columns:1fr;} }
+  .rule-cell{ background:var(--paper); padding:24px; }
+  .rule-cell .num-tag{ font-family:'Teko'; font-size:30px; color:var(--gold-deep); font-weight:600; line-height:1; }
+  .rule-cell h6{ font-family:'Bungee'; font-size:14px; color:var(--navy-deep); margin:8px 0 8px; letter-spacing:.4px;}
+  .rule-cell p{ font-size:13px; color:#7a7460; line-height:1.6; font-weight:500;}
+
+  /* =================== FOOTER =================== */
+  footer{
+    position:relative; background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, var(--green-deep) 100%);
+    color:var(--paper); padding:64px 6vw 40px; overflow:hidden;
+  }
+  footer::before{
+    content:"BOA SORTE"; position:absolute; right:-30px; bottom:-58px; font-family:'Bungee Inline';
+    font-size:clamp(70px,14vw,180px); color:rgba(244,194,43,.08); letter-spacing:4px; pointer-events:none; white-space:nowrap;
+  }
+  .foot-grid{ position:relative; z-index:1; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:30px; }
+  footer h3{ font-size:clamp(30px,5vw,52px); }
+  footer h3 .accent{ color:var(--gold); }
+  footer p{ max-width:480px; margin-top:14px; opacity:.78; font-weight:500; line-height:1.6; font-size:14.5px;}
+  .foot-meta{ font-family:'Barlow Condensed'; letter-spacing:2px; text-transform:uppercase; font-size:12.5px; opacity:.55; font-weight:600;}
+  .foot-meta span{ display:block; margin-top:6px; }
+  .foot-logos{ display:flex; align-items:center; gap:14px; margin-top:22px; flex-wrap:wrap; position:relative; z-index:1;}
+  .foot-logos .logo-chip{ display:inline-flex; align-items:center; justify-content:center; background:var(--paper); border-radius:10px; padding:9px 18px; box-shadow:0 8px 20px rgba(5,12,28,.35); border:1px solid rgba(255,255,255,.08); }
+  .foot-logos img{ height:24px; width:auto; display:block; }
+  hr.sep{ border:none; height:1px; background:rgba(246,239,220,.14); margin:36px 0 22px; position:relative; z-index:1;}
+  .legal{ position:relative; z-index:1; font-size:12px; opacity:.5; font-weight:500; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <img class="crest" src="assets/logo-copa-econ.png" alt="Escudo Copa Econ 2026">
+      <div class="brand-text">
+        <div class="kicker">Campanha de vendas · Vigência junho/2026</div>
+        <h1 class="wordmark">Copa Econ 2026</h1>
+      </div>
+    </div>
+    <div class="live-pill"><span class="live-dot"></span> Apuração de junho/2026</div>
+  </div>
+
+  <div class="ball" aria-hidden="true"></div>
+
+  <div class="hero">
+    <div class="eyebrow">Ranking oficial · Econ Mais &amp; Econ Vendas</div>
+    <h2>QUEM VAI <span class="accent">LEVANTAR</span><br>A TAÇA ESTE MÊS?</h2>
+    <p class="lead">
+      Classificação construída a partir das vendas <strong>confirmadas em junho/2026</strong>
+      no Controle Geral de Vendas — separada pelas duas empresas parceiras da Copa Econ
+      (<strong>Econ Mais</strong> e <strong>Econ Vendas</strong>) e organizada por categoria:
+      corretores, gerentes e diretores.
+    </p>
+    <div class="hero-meta">
+      <div class="meta-chip"><b id="metaTotalVendas">–</b> vendas confirmadas no mês</div>
+      <div class="meta-chip"><b id="metaTotalPessoas">–</b> nomes pontuando no ranking</div>
+      <div class="meta-chip"><b>2ª-feira</b> apuração às 16h</div>
+      <div class="meta-chip"><b>R$10mil</b> em prêmios no topo</div>
+    </div>
+  </div>
+</header>
+
+<div class="pitch-strip" aria-hidden="true"></div>
+
+<div class="controls-wrap">
+  <div class="controls">
+    <div class="company-switch" id="companySwitch">
+      <button class="company-btn active" data-company="mais">
+        <img src="assets/logo-econ-mais.png" alt="Logo Econ Mais">
+        <span class="meta"><span class="label">Empresa parceira</span><span class="count" id="countMais">– vendas em jun/26</span></span>
+      </button>
+      <button class="company-btn" data-company="vendas">
+        <img src="assets/logo-econ-vendas.png" alt="Logo Econ Vendas">
+        <span class="meta"><span class="label">Empresa parceira</span><span class="count" id="countVendas">– vendas em jun/26</span></span>
+      </button>
+    </div>
+    <div class="sub-row">
+      <div class="role-row" id="roleSwitch">
+        <button class="chip active" data-role="corretores">Corretores <span class="count-tag" id="cntCorretores">–</span></button>
+        <button class="chip" data-role="gerentes">Gerentes <span class="count-tag" id="cntGerentes">–</span></button>
+        <button class="chip" data-role="diretores">Diretores <span class="count-tag" id="cntDiretores">–</span></button>
+      </div>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#f6efdc"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2" stroke-linecap="round"/></svg>
+        <input type="text" id="searchInput" placeholder="Buscar por nome…">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PODIUM ===================== -->
+<section class="section reveal" id="podio">
+  <div class="section-head">
+    <div class="tag">Top 6 da categoria</div>
+    <h3>O pódio de junho</h3>
+    <p>Os seis primeiros colocados da categoria — pontuação por vendas confirmadas em junho/2026 combinando volume, prioridade de empreendimento e bônus semanais.</p>
+    <div class="active-context" id="activeContext">
+      <img id="ctxLogo" src="assets/logo-econ-mais.png" alt="">
+      <span id="ctxLabel">ECON MAIS · CORRETORES</span>
+    </div>
+  </div>
+  <div class="podium" id="podiumWrap"></div>
+  <div class="champions-bar" id="championsBar"></div>
+</section>
+
+<div class="torn" aria-hidden="true">
+  <svg viewBox="0 0 1200 64" preserveAspectRatio="none"><path d="M0,18 L40,30 L85,8 L130,34 L175,14 L220,38 L265,12 L310,30 L355,6 L400,32 L445,16 L490,40 L535,10 L580,28 L625,4 L670,34 L715,18 L760,38 L805,12 L850,30 L895,8 L940,34 L985,14 L1030,40 L1075,10 L1120,28 L1165,6 L1200,20 L1200,64 L0,64 Z" fill="#16294e" opacity="0.06"/></svg>
+</div>
+
+<!-- ===================== RANKING TABLE ===================== -->
+<section class="section reveal" id="ranking">
+  <div class="section-head">
+    <div class="tag">Classificação completa</div>
+    <h3>Tabela geral da categoria selecionada</h3>
+    <p>Posição, composição da pontuação (vendas em empreendimentos prioritários x demais lançamentos) e VGV gerado em junho/2026.</p>
+  </div>
+
+  <div class="board">
+    <div class="board-head">
+      <div>Pos.</div>
+      <div>Nome</div>
+      <div>Composição da pontuação</div>
+      <div>VGV gerado</div>
+      <div class="al-r">Total</div>
+    </div>
+    <div id="boardBody"></div>
+    <div class="empty-state" id="emptyState">Nenhum nome encontrado com esse filtro — tente outra busca. ⚽</div>
+  </div>
+
+
+</section>
+
+<!-- ===================== HOW TO SCORE ===================== -->
+<section class="section reveal" id="pontuacao">
+  <div class="section-head">
+    <div class="tag">Como pontuar</div>
+    <h3>5 formas de marcar gol no ranking</h3>
+    <p>A pontuação oficial da Copa Econ valoriza a venda em cada categoria — estoque, prontos e empreendimentos prioritários — além dos bônus semanais de indicações e de volume.</p>
+  </div>
+  <div class="score-grid">
+    <div class="score-card c1">
+      <div class="badge">10<small>PTS</small></div>
+      <h5>Venda de apartamentos em estoque</h5>
+      <p>Pontuação base por cada unidade em estoque comercializada dentro do período da campanha.</p>
+    </div>
+    <div class="score-card c2">
+      <div class="badge">15<small>PTS</small></div>
+      <h5>Venda de apartamentos prontos</h5>
+      <p>Bônus para quem acelera a entrega do estoque pronto — entrada confirmada conta ponto.</p>
+    </div>
+    <div class="score-card c3">
+      <div class="badge">25<small>PTS</small></div>
+      <h5>Venda dos empreendimentos prioritários</h5>
+      <p>Maior pontuação da tabela para vendas dos empreendimentos Soul, Rangel, Free e Buono.</p>
+    </div>
+    <div class="score-card c4">
+      <div class="badge">+5<small>PTS</small></div>
+      <h5>Campeão de indicações da semana</h5>
+      <p>O corretor que mais gerar indicações qualificadas na semana recebe pontos extras no placar.</p>
+    </div>
+    <div class="score-card c5">
+      <div class="badge">10<small>PTS</small></div>
+      <h5>Campeão de vendas da semana</h5>
+      <p>O gerente e o diretor que mais venderem na semana recebem bônus de volume no ranking.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRIZES ===================== -->
+<section class="section reveal" id="premios">
+  <div class="section-head">
+    <div class="tag">Premiação</div>
+    <h3>O que está em disputa no topo</h3>
+    <p>Os três primeiros colocados de cada categoria sobem ao pódio e levam para casa prêmios exclusivos da Copa Econ 2026.</p>
+  </div>
+  <div class="prizes">
+    <div class="prize-card corretores">
+      <h4>🏅 Corretores campeões</h4>
+      <ul class="prize-list">
+        <li><span class="medal">1°</span> Moto POP 110i ES — pagamento via cartão premiação no valor de R$ 10 mil</li>
+        <li><span class="medal">2°</span> iPhone 16</li>
+        <li><span class="medal">3°</span> Notebook</li>
+      </ul>
+      <p class="fine">Imagens ilustrativas. O pagamento da moto será feito via cartão premiação no valor de R$ 10 mil.</p>
+    </div>
+    <div class="prize-card gerentes">
+      <h4>🎖️ Gerentes campeões</h4>
+      <ul class="prize-list">
+        <li><span class="medal">1°</span> iPhone 16</li>
+        <li><span class="medal">2°</span> Notebook</li>
+        <li><span class="medal">3°</span> Verba de leads — R$ 2 mil</li>
+      </ul>
+      <p class="fine">Imagens ilustrativas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RULES ===================== -->
+<section class="section reveal" id="regras">
+  <div class="section-head">
+    <div class="tag">Regras do campo</div>
+    <h3>Critérios de elegibilidade, apuração e desempate</h3>
+    <p>Tudo o que define quem entra em campo, o que conta como gol e como o juiz resolve um empate na tabela.</p>
+  </div>
+  <div class="rules">
+    <div class="rule-cell">
+      <div class="num-tag">01</div>
+      <h6>Elegibilidade</h6>
+      <p>Todos os corretores, gerentes e diretores das duas empresas parceiras (Econ Mais e Econ Vendas) participam automaticamente. Vigência: junho/2026.</p>
+    </div>
+    <div class="rule-cell">
+      <div class="num-tag">02</div>
+      <h6>O que conta como venda</h6>
+      <p>Contratos assinados e com entrada confirmada no período (status DR no Controle Geral de Vendas). Distrato antes do fechamento não pontua — por isso vendas com status DNR foram excluídas do ranking.</p>
+    </div>
+    <div class="rule-cell">
+      <div class="num-tag">03</div>
+      <h6>Apuração semanal</h6>
+      <p>Ranking apurado toda segunda-feira às 16h. E-mail marketing com o resultado disparado até 18h de terça-feira. Vendas em parceria (Venda Fifty) pontuam metade para cada nome envolvido.</p>
+    </div>
+    <div class="rule-cell">
+      <div class="num-tag">04</div>
+      <h6>Critério de desempate</h6>
+      <p>1º empreendimento de maior prioridade · 2º maior quantidade de unidades de apartamento pronto (peso 2) · 3º maior VGV gerado nos 30 dias.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h3>BOA <span class="accent">SORTE</span>,<br>CRAQUE.</h3>
+      <p>O apito inicial já deu — agora é hora de entrar em campo, fechar negócio
+      e subir na tabela. Que vença o time mais completo da Copa Econ 2026.</p>
+      <div class="foot-logos">
+        <span class="logo-chip"><img src="assets/logo-econ-25anos.png" alt="Econ 25 anos"></span>
+        <span class="logo-chip"><img src="assets/logo-econ-mais.png" alt="Econ Mais"></span>
+        <span class="logo-chip"><img src="assets/logo-econ-vendas.png" alt="Econ Vendas"></span>
+      </div>
+    </div>
+    <div class="foot-meta">
+      Copa Econ · Edição Junho 2026
+      <span>Apuração: segundas-feiras às 16h</span>
+      <span>Disparo do ranking: terças até 18h</span>
+    </div>
+  </div>
+  <hr class="sep">
+  <div class="legal">
+    <span>Ranking gerado a partir do Controle Geral de Vendas 2026 — vendas confirmadas (DR) de junho/2026, Econ Mais e Econ Vendas.</span>
+    <span>Copa Econ 2026 · Regulamento interno</span>
+  </div>
+</footer>
+
+<script src="assets/ranking-data.js"></script>
+<script>
+  // ------------------------------------------------------------------
+  // RANKING_DATA vem de assets/ranking-data.js, gerado a partir da aba
+  // "Vendas Junho" do Controle Geral de Vendas (status DR, mês 06/ano 26),
+  // cruzada com a aba "EmpStatus" (define quais empreendimentos estão com
+  // status "Pronto" para o bônus de 15 pts) e com os vencedores oficiais
+  // do "Campeão de indicações da semana" (+5 pts, marcados com indicacaoSemana:true).
+  // Estrutura: RANKING_DATA[empresa][papel] = [{ nome, pontos, vendas, vgv,
+  // empreendimentos:{NOME:contagem}, indicacaoSemana? }, ...] já ordenado por
+  // pontos (critério de desempate: nº de vendas prioritárias › nº de unidades
+  // prontas › VGV gerado). PRONTO_EMPREENDIMENTOS lista os empreendimentos
+  // com status "Pronto" no mês de apuração.
+  // ------------------------------------------------------------------
+  const PRIORITY = new Set(['SOUL', 'RANGEL', 'FREE', 'BUONO']);
+  const PRONTO = new Set((typeof PRONTO_EMPREENDIMENTOS !== 'undefined' ? PRONTO_EMPREENDIMENTOS : []).map(e => e.toUpperCase()));
+  const COMPANY_LABEL = { mais: 'Econ Mais', vendas: 'Econ Vendas' };
+  const COMPANY_LOGO  = { mais: 'assets/logo-econ-mais.png', vendas: 'assets/logo-econ-vendas.png' };
+  const ROLE_LABEL    = { corretores: 'Corretores', gerentes: 'Gerentes', diretores: 'Diretores' };
+  const ROLE_TAGLINE  = { corretores: 'Corretor(a) / imobiliária parceira', gerentes: 'Gerente de equipe', diretores: 'Diretor(a) regional' };
+
+  const avatarPalette = [
+    ["#168a45","#0a5c30"], ["#16294e","#0a1730"], ["#d99e00","#a87800"],
+    ["#b06b3a","#7a4a26"], ["#7a3bb2","#532578"], ["#1f8fae","#136277"],
+  ];
+
+  let state = { company: 'mais', role: 'corretores' };
+
+  function initials(name){
+    const clean = name.replace(/[+]/g,'').trim();
+    return clean.split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase();
+  }
+
+  function fmtVGV(v){
+    if(v >= 1000000) return 'R$ ' + (v/1000000).toFixed(2).replace('.',',') + ' mi';
+    return 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+  }
+
+  function fmtVendas(v){
+    return (Math.round(v*10)/10).toLocaleString('pt-BR', { minimumFractionDigits: v % 1 !== 0 ? 1 : 0, maximumFractionDigits: 1 });
+  }
+
+  function scoreBreakdown(emps){
+    let prio = 0, pronto = 0, padrao = 0;
+    Object.entries(emps).forEach(([emp, count]) => {
+      const e = (emp || '').toUpperCase();
+      if(PRIORITY.has(e)) prio += count;
+      else if(PRONTO.has(e)) pronto += count;
+      else padrao += count;
+    });
+    return { prio, pronto, padrao };
+  }
+
+  function topEmpreendimentos(emps, n=2){
+    return Object.entries(emps).sort((a,b)=>b[1]-a[1]).slice(0,n).map(([e,c]) => `${e}${c>1 ? ' ×'+c : ''}`).join(' · ');
+  }
+
+  // ---- header counts ----
+  function updateHeaderCounts(){
+    const totalVendas = c => Object.values(RANKING_DATA[c]).reduce((acc, list) =>
+      acc + list.reduce((s,p)=> s + p.vendas, 0), 0) / 3; // each sale counted in 3 roles, divide back
+    const tMais = totalVendas('mais');
+    const tVendas = totalVendas('vendas');
+    document.getElementById('countMais').textContent   = `${fmtVendas(tMais)} vendas em jun/26`;
+    document.getElementById('countVendas').textContent = `${fmtVendas(tVendas)} vendas em jun/26`;
+    document.getElementById('metaTotalVendas').textContent = fmtVendas(tMais + tVendas);
+
+    const allNames = new Set();
+    ['mais','vendas'].forEach(c => ['corretores','gerentes','diretores'].forEach(r =>
+      RANKING_DATA[c][r].forEach(p => allNames.add(c+'|'+r+'|'+p.nome))
+    ));
+    document.getElementById('metaTotalPessoas').textContent = allNames.size;
+  }
+
+  function updateRoleCounts(){
+    const data = RANKING_DATA[state.company];
+    document.getElementById('cntCorretores').textContent = data.corretores.length;
+    document.getElementById('cntGerentes').textContent   = data.gerentes.length;
+    document.getElementById('cntDiretores').textContent  = data.diretores.length;
+  }
+
+  // ---- podium (top 6: row-top = 1-2-3, row-sub = 4-5-6) ----
+  const podiumWrap = document.getElementById('podiumWrap');
+  function podiumCard(item, rankIdx, cssClass, isTop3){
+    const sizeClass = isTop3 ? 'top3' : 'sub3';
+    const crowns = {0:'🏆', 1:'', 2:''};
+    const crown = isTop3 && crowns[rankIdx] ? `<div class="crown">${crowns[rankIdx]}</div>` : '';
+    const flag = item.indicacaoSemana ? '<span class="flag-indicacao-podio">⭐ indicações</span>'
+               : item.campeoVendasSemana ? '<span class="flag-indicacao-podio" style="background:linear-gradient(120deg,#168a45,#0a5c30)">⚽ campeão de vendas</span>'
+               : '';
+    return `<div class="podium-card ${cssClass} ${sizeClass}">
+      ${crown}
+      <div class="avatar">${initials(item.nome)}</div>
+      <h4 title="${item.nome}">${item.nome}</h4>
+      <div class="empresa">${topEmpreendimentos(item.empreendimentos,1)||'—'}</div>
+      ${flag}
+      <div class="pts">${item.pontos%1!==0?item.pontos.toFixed(1):item.pontos}<span>pontos</span></div>
+      <div class="riser"><span class="place">${rankIdx+1}</span></div>
+    </div>`;
+  }
+
+  function renderPodium(list){
+    podiumWrap.innerHTML = '';
+    if(!list.length){
+      podiumWrap.innerHTML = '<div class="podium-empty">Sem registros nesta categoria ainda — o pódio aparece assim que o primeiro gol sair.</div>';
+      return;
+    }
+    // Row 1: visual order 2nd-1st-3rd
+    const rowTop = document.createElement('div');
+    rowTop.className = 'podium-row';
+    const top3Order = [{i:1,cls:'p2'},{i:0,cls:'p1'},{i:2,cls:'p3'}];
+    top3Order.forEach(({i,cls}) => {
+      if(list[i]) rowTop.innerHTML += podiumCard(list[i], i, cls, true);
+    });
+    podiumWrap.appendChild(rowTop);
+    // Row 2: 4th-5th-6th in order
+    const sub = list.slice(3,6);
+    if(sub.length){
+      const rowSub = document.createElement('div');
+      rowSub.className = 'podium-row';
+      sub.forEach((item,j) => {
+        rowSub.innerHTML += podiumCard(item, j+3, `p${j+4}`, false);
+      });
+      podiumWrap.appendChild(rowSub);
+    }
+  }
+
+  // ---- champions bar ----
+  const championsBar = document.getElementById('championsBar');
+  function renderChampions(){
+    const c = state.company;
+    const cv = CAMPEOS[c].vendasSemana;
+    const ci = CAMPEOS[c].indicacoes;
+    const roleLabels = {corretores:'corretor', gerentes:'gerente', diretores:'diretor'};
+    const vendasNames = Object.entries(cv).map(([role, nome]) => {
+      if(nome === null){
+        return `<span class="champ-name champ-tie"><em>${roleLabels[role] || role}: empate</em></span>`;
+      }
+      return `<span class="champ-name">${nome} <em>${roleLabels[role] || role}</em></span>`;
+    }).join('');
+    const indicNames = ci.map(n =>
+      `<span class="champ-name">${n} <em>corretor</em></span>`
+    ).join('');
+    championsBar.innerHTML = `
+      <div class="champion-card">
+        <div class="champ-icon">⚽</div>
+        <div class="champ-info">
+          <span class="champ-label">Campeão de Vendas da Semana</span>
+          <div class="champ-names">${vendasNames || '<span class="champ-name">— <em>a apurar</em></span>'}</div>
+        </div>
+      </div>
+      <div class="champion-card">
+        <div class="champ-icon">⭐</div>
+        <div class="champ-info">
+          <span class="champ-label">Campeão de Indicações da Semana</span>
+          <div class="champ-names">${indicNames || '<span class="champ-name">— <em>a apurar</em></span>'}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  // ---- board ----
+  const boardBody = document.getElementById('boardBody');
+  const emptyState = document.getElementById('emptyState');
+  let currentRest = [];
+
+  function renderBoard(list){
+    boardBody.innerHTML = '';
+    currentRest = list.slice(6);
+    const maxPts = list.length ? list[0].pontos : 1;
+
+    currentRest.forEach((item, i) => {
+      const pos = i + 7;
+      const palette = avatarPalette[(i+3) % avatarPalette.length];
+      const { prio, pronto, padrao } = scoreBreakdown(item.empreendimentos);
+      const total = prio + pronto + padrao;
+      let prioPct = total ? Math.round((prio/total)*100) : 0;
+      let prontoPct = total ? Math.round((pronto/total)*100) : 0;
+      let padraoPct = total ? 100 - prioPct - prontoPct : 0;
+      if(total){
+        if(prio && prioPct < 6) prioPct = 6;
+        if(pronto && prontoPct < 6) prontoPct = 6;
+        padraoPct = Math.max(0, 100 - prioPct - prontoPct);
+      }
+
+      const row = document.createElement('div');
+      row.className = 'board-row';
+      row.dataset.nome = item.nome.toLowerCase();
+
+      row.innerHTML = `
+        <div class="pos"><span class="rank-num">${pos}</span></div>
+        <div class="who">
+          <div class="chip-avatar" style="background:linear-gradient(150deg, ${palette[0]}, ${palette[1]})">${initials(item.nome)}</div>
+          <div class="who-text">
+            <h5 title="${item.nome}">${item.nome}${item.indicacaoSemana ? '<span class="flag-indicacao">⭐ indicações</span>' : ''}</h5>
+            <div class="tagline">${topEmpreendimentos(item.empreendimentos, 3) || (item.indicacaoSemana ? 'Bônus de indicação da semana' : '—')}</div>
+          </div>
+        </div>
+        <div class="breakdown">
+          <div class="stack">
+            ${prio ? `<i class="seg-prioridade" style="width:${prioPct}%" title="${prio} venda(s) em empreendimento prioritário (25 pts)"></i>` : ''}
+            ${pronto ? `<i class="seg-pronto" style="width:${prontoPct}%" title="${pronto} venda(s) de apartamento pronto (15 pts)"></i>` : ''}
+            ${padrao ? `<i class="seg-padrao" style="width:${padraoPct}%" title="${padrao} venda(s) em demais empreendimentos (10 pts)"></i>` : ''}
+            ${total === 0 ? '<i class="seg-empty" style="width:100%"></i>' : ''}
+          </div>
+          <small><b>${prio.toFixed(1).replace(/\.0$/,'')}</b> prioritárias · <b>${pronto.toFixed(1).replace(/\.0$/,'')}</b> prontas · <em>${padrao.toFixed(1).replace(/\.0$/,'')}</em> demais · ${fmtVendas(item.vendas)} venda(s) no total${item.indicacaoSemana ? ' · <b>+5</b> indicação da semana' : ''}</small>
+        </div>
+        <div class="vgv-cell">
+          <span class="v">${fmtVGV(item.vgv)}</span>
+          <small>VGV gerado</small>
+        </div>
+        <div class="total">
+          <span class="num" data-target="${item.pontos}">0</span>
+          <small>pontos</small>
+        </div>
+      `;
+      boardBody.appendChild(row);
+    });
+
+    animateCounters();
+    applySearch();
+  }
+
+  function animateCounters(){
+    const nums = boardBody.querySelectorAll('.num[data-target]');
+    nums.forEach(el => {
+      const target = parseFloat(el.dataset.target);
+      const isFloat = target % 1 !== 0;
+      let current = 0;
+      const steps = 36;
+      const inc = target / steps;
+      let n = 0;
+      const tick = () => {
+        n++;
+        current = Math.min(target, current + inc);
+        el.textContent = isFloat ? current.toFixed(1) : Math.round(current);
+        if(n < steps) requestAnimationFrame(tick);
+        else el.textContent = isFloat ? target.toFixed(1) : target;
+      };
+      requestAnimationFrame(tick);
+    });
+  }
+
+  // ---- search ----
+  const searchInput = document.getElementById('searchInput');
+  function applySearch(){
+    const term = searchInput.value.trim().toLowerCase();
+    const rows = boardBody.querySelectorAll('.board-row');
+    let visible = 0;
+    rows.forEach(row => {
+      const show = row.dataset.nome.includes(term);
+      row.classList.toggle('hide', !show);
+      if(show) visible++;
+    });
+    emptyState.classList.toggle('show', term.length > 0 && visible === 0 && currentRest.length > 0);
+  }
+  searchInput.addEventListener('input', applySearch);
+
+  // ---- render orchestration ----
+  function renderAll(){
+    const list = RANKING_DATA[state.company][state.role];
+    document.getElementById('ctxLogo').src = COMPANY_LOGO[state.company];
+    document.getElementById('ctxLabel').textContent = `${COMPANY_LABEL[state.company].toUpperCase()} · ${ROLE_LABEL[state.role].toUpperCase()}`;
+    updateRoleCounts();
+    searchInput.value = '';
+    renderPodium(list);
+    renderBoard(list);
+    renderChampions();
+  }
+
+  // ---- controls wiring ----
+  document.querySelectorAll('#companySwitch .company-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#companySwitch .company-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.company = btn.dataset.company;
+      renderAll();
+    });
+  });
+  document.querySelectorAll('#roleSwitch .chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#roleSwitch .chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.role = btn.dataset.role;
+      renderAll();
+    });
+  });
+
+  updateHeaderCounts();
+  renderAll();
+
+  // ---- reveal on scroll ----
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

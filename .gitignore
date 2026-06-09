@@ -1,0 +1,4 @@
+# Scripts internos — não vão pro repositório público
+*.py
+Copa-Econ-2026-Ranking.html
+.claude/
