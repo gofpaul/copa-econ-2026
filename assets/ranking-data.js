@@ -711,28 +711,6 @@ const RANKING_DATA = {
     ],
     "gerentes": [
       {
-        "nome": "SOUZA",
-        "pontos": 30.0,
-        "vendas": 2.0,
-        "vgv": 784900.0,
-        "empreendimentos": {
-          "VISION": 1,
-          "GREEN EMBIRA": 1
-        },
-        "campeoVendasSemana": true
-      },
-      {
-        "nome": "VEIGGA",
-        "pontos": 30.0,
-        "vendas": 2.0,
-        "vgv": 593900.0,
-        "empreendimentos": {
-          "FLOW": 1,
-          "EVO": 1
-        },
-        "campeoVendasSemana": true
-      },
-      {
         "nome": "CAMILA",
         "pontos": 27.5,
         "vendas": 1.5,
@@ -750,6 +728,26 @@ const RANKING_DATA = {
         "vgv": 369900.0,
         "empreendimentos": {
           "FREE": 1
+        }
+      },
+      {
+        "nome": "SOUZA",
+        "pontos": 20.0,
+        "vendas": 2.0,
+        "vgv": 784900.0,
+        "empreendimentos": {
+          "VISION": 1,
+          "GREEN EMBIRA": 1
+        }
+      },
+      {
+        "nome": "VEIGGA",
+        "pontos": 20.0,
+        "vendas": 2.0,
+        "vgv": 593900.0,
+        "empreendimentos": {
+          "FLOW": 1,
+          "EVO": 1
         }
       },
       {
@@ -912,20 +910,6 @@ const RANKING_DATA = {
         "campeoVendasSemana": true
       },
       {
-        "nome": "TRINDADE",
-        "pontos": 57.5,
-        "vendas": 4.5,
-        "vgv": 1710240.0,
-        "empreendimentos": {
-          "GRAN SKY": 1,
-          "SPIN": 1,
-          "FLOW": 1,
-          "NOW": 1,
-          "EVO": 1
-        },
-        "campeoVendasSemana": true
-      },
-      {
         "nome": "THAIS",
         "pontos": 55.0,
         "vendas": 4.0,
@@ -935,6 +919,19 @@ const RANKING_DATA = {
           "LIKE": 1,
           "HYPE STYLE": 1,
           "GRID": 1
+        }
+      },
+      {
+        "nome": "TRINDADE",
+        "pontos": 47.5,
+        "vendas": 4.5,
+        "vgv": 1710240.0,
+        "empreendimentos": {
+          "GRAN SKY": 1,
+          "SPIN": 1,
+          "FLOW": 1,
+          "NOW": 1,
+          "EVO": 1
         }
       },
       {
@@ -1032,13 +1029,10 @@ const CAMPEOS = {
     "vendasSemana": {
       "corretores": [],
       "gerentes": [
-        "CAMILA",
-        "SOUZA",
-        "VEIGGA"
+        "CAMILA"
       ],
       "diretores": [
-        "LUPETTI",
-        "TRINDADE"
+        "LUPETTI"
       ]
     },
     "indicacoes": [
@@ -1050,9 +1044,12 @@ const CAMPEOS = {
 // ============================================================
 //  APURACAO SEMANAL — registro das semanas da Copa Econ 2026
 //  Imobiliarias (aba CorretoresImobiliaria) NAO participam.
-//  Campeao de vendas: criterio = PARTICIPACAO (venda fifty conta como 1).
-//  Vencedores = todos no maximo; empate (lista vazia) quando todos tem
-//  a mesma quantidade de participacoes.
+//  Campeao de vendas (em cascata):
+//    1) quantidade de vendas (participacao; fifty = 1 inteira)
+//    2) desempate: unidades criticas/prioritarias
+//    3) desempate: unidades prontas
+//    4) desempate: VGV
+//  Empate (lista vazia) so quando todos tem a mesma quantidade de vendas.
 //  Para nova semana: registre novo bloco e atualize SEMANA_ATUAL.
 // ============================================================
 const SEMANAS = {
