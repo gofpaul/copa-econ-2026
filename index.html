@@ -260,30 +260,69 @@
     letter-spacing:1px; text-transform:uppercase; font-size:15px;
   }
 
+  /* ---- tooltip de composição no pódio ---- */
+  .podium-card{ cursor:pointer; }
+  .tip-hint{
+    position:absolute; top:0; right:2px; z-index:3;
+    width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-family:'Teko'; font-size:13px; font-weight:600; font-style:italic;
+    background:var(--navy-deep); color:var(--gold); opacity:.55; transition:opacity .18s ease, transform .18s ease;
+  }
+  .sub3 .tip-hint{ width:16px; height:16px; font-size:11px; }
+  .podium-card:hover .tip-hint, .podium-card:focus .tip-hint{ opacity:1; transform:scale(1.12); }
+
+  .podium-tip{
+    position:absolute; left:50%; bottom:calc(100% + 12px); transform:translateX(-50%) translateY(6px);
+    width:236px; background:var(--navy-deep); color:var(--paper); border-radius:13px; padding:15px 17px;
+    box-shadow:0 22px 46px -14px rgba(10,15,30,.65); border:1px solid rgba(244,194,43,.28);
+    opacity:0; visibility:hidden; transition:opacity .18s ease, transform .18s ease; z-index:70; text-align:left; pointer-events:none;
+  }
+  .podium-card:hover .podium-tip, .podium-card:focus .podium-tip{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+  .podium-tip::after{ content:""; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:8px solid transparent; border-top-color:var(--navy-deep); }
+  .tip-title{ font-family:'Barlow Condensed'; text-transform:uppercase; letter-spacing:1.4px; font-size:10.5px; font-weight:700; color:rgba(246,239,220,.5); margin-bottom:10px; }
+  .tip-bar{ height:7px; border-radius:4px; overflow:hidden; display:flex; gap:2px; margin-bottom:10px; background:rgba(255,255,255,.07); }
+  .tip-bar .ts{ display:block; height:100%; border-radius:2px; }
+  .ts-prio{ background:#3a9e6a; } .ts-pronto{ background:#c9a53a; } .ts-padrao{ background:#5a7fbf; }
+  .tip-legend{ display:flex; flex-direction:column; gap:4px; margin-bottom:11px; font-family:'Barlow'; font-size:11.5px; color:rgba(246,239,220,.82); }
+  .tip-legend i{ display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:7px; vertical-align:middle; }
+  .tip-legend em{ font-style:normal; color:rgba(246,239,220,.45); font-size:10px; margin-left:4px; }
+  .tip-legend .d-prio{ background:#3a9e6a; } .tip-legend .d-pronto{ background:#c9a53a; } .tip-legend .d-padrao{ background:#5a7fbf; }
+  .tip-emps{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:5px; max-height:130px; overflow:auto; }
+  .tip-emps li{ display:flex; justify-content:space-between; gap:10px; font-family:'Barlow'; font-size:12.5px; color:var(--paper); }
+  .tip-emps li b{ color:var(--gold); font-family:'Teko'; font-weight:600; }
+  .tip-emps .tip-none{ justify-content:center; font-style:italic; color:rgba(246,239,220,.55); text-align:center; }
+  .tip-bonuses{ display:flex; flex-direction:column; gap:4px; margin-top:11px; }
+  .tip-bonus{ font-family:'Barlow Condensed'; font-size:11px; font-weight:700; letter-spacing:.6px; text-transform:uppercase; color:#33d67a; }
+  .tip-bonus-i{ color:var(--gold); }
+  .tip-foot{ margin-top:11px; padding-top:10px; border-top:1px solid rgba(246,239,220,.13); font-family:'Barlow Condensed'; font-size:11.5px; letter-spacing:.4px; color:var(--gold); text-transform:uppercase; font-weight:600; }
+
   /* =================== CHAMPIONS BAR =================== */
-  .champions-bar{
-    display:flex; gap:14px; flex-wrap:wrap; margin:28px 0 0;
-    background:var(--navy-deep); border-radius:18px; padding:18px 22px;
-    box-shadow: var(--shadow); border:1px solid rgba(244,194,43,.18);
+  .champions-bar{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:34px 0 0; }
+  @media(max-width:760px){ .champions-bar{ grid-template-columns:1fr; } }
+  .champ-panel{
+    background:#fffdf7; border:1px solid var(--line); border-radius:16px; padding:20px 24px 20px 26px;
+    box-shadow:0 12px 34px -20px rgba(10,23,48,.4); position:relative; overflow:hidden;
   }
-  .champion-card{ flex:1 1 220px; display:flex; align-items:center; gap:14px; }
-  .champion-card + .champion-card{ border-left:1px solid rgba(246,239,220,.1); padding-left:14px; }
-  @media(max-width:600px){ .champion-card+.champion-card{ border-left:none; border-top:1px solid rgba(246,239,220,.1); padding-left:0; padding-top:14px; } }
-  .champ-icon{ font-size:26px; flex-shrink:0; }
-  .champ-info{ display:flex; flex-direction:column; gap:4px; }
-  .champ-label{
-    font-family:'Barlow Condensed'; letter-spacing:2px; text-transform:uppercase; font-size:10.5px;
-    color:rgba(246,239,220,.45); font-weight:700;
+  .champ-panel::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:5px; }
+  .champ-vendas::before{ background:linear-gradient(180deg, var(--gold), var(--gold-deep)); }
+  .champ-indic::before{ background:linear-gradient(180deg, var(--green), var(--green-deep)); }
+  .champ-head{ display:flex; align-items:flex-start; gap:13px; margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid var(--line); }
+  .champ-emoji{ font-size:25px; line-height:1; filter:drop-shadow(0 3px 5px rgba(10,23,48,.18)); }
+  .champ-head h5{ font-family:'Teko', sans-serif; font-size:22px; font-weight:600; color:var(--navy-deep); letter-spacing:.4px; line-height:1; }
+  .champ-head p{ font-family:'Barlow', sans-serif; font-size:12px; color:#8a836b; margin-top:4px; line-height:1.3; }
+  .champ-body{ display:flex; flex-direction:column; gap:11px; }
+  .cw-row{ display:grid; grid-template-columns:92px 1fr; gap:12px; align-items:baseline; }
+  .cw-role{ font-family:'Barlow Condensed', sans-serif; text-transform:uppercase; letter-spacing:1.3px; font-size:11px; font-weight:700; color:#9a937e; padding-top:2px; }
+  .cw-names{ display:flex; flex-wrap:wrap; gap:6px 8px; align-items:baseline; }
+  .cw-name{
+    font-family:'Barlow', sans-serif; font-weight:700; font-size:14px; color:var(--navy-deep);
+    background:rgba(244,194,43,.18); border-radius:7px; padding:3px 10px;
   }
-  .champ-names{ display:flex; flex-wrap:wrap; gap:6px; }
-  .champ-name{
-    display:inline-flex; align-items:center; gap:6px;
-    background:rgba(255,255,255,.07); border:1px solid rgba(246,239,220,.14); border-radius:8px;
-    padding:5px 10px; font-family:'Bungee'; font-size:12px; color:var(--paper);
-  }
-  .champ-name em{ font-style:normal; font-family:'Barlow Condensed'; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(246,239,220,.5); font-weight:700; }
-  .champ-tie{ border-color:rgba(246,239,220,.08); background:rgba(255,255,255,.03); }
-  .champ-tie em{ color:rgba(246,239,220,.3); font-style:italic !important; }
+  .champ-indic .cw-name{ background:rgba(22,138,69,.15); }
+  .cw-name.cw-many{ background:rgba(22,41,78,.1); }
+  .cw-vc{ font-family:'Barlow Condensed', sans-serif; font-size:12px; font-weight:600; letter-spacing:.4px; color:var(--gold-deep); text-transform:uppercase; }
+  .champ-indic .cw-vc{ color:var(--green); }
+  .cw-empate{ font-family:'Barlow', sans-serif; font-style:italic; font-size:13px; color:#a59c84; }
 
   /* =================== RANKING TABLE =================== */
   .board{ background:var(--paper); border:1.5px solid var(--line); border-radius:20px; box-shadow: var(--shadow); overflow:hidden; }
@@ -667,7 +706,7 @@
   </div>
 </footer>
 
-<script src="assets/ranking-data.js?v=20260609b"></script>
+<script src="assets/ranking-data.js?v=20260609c"></script>
 <script>
   // ------------------------------------------------------------------
   // RANKING_DATA vem de assets/ranking-data.js, gerado a partir da aba
@@ -755,6 +794,32 @@
 
   // ---- podium (top 6: row-top = 1-2-3, row-sub = 4-5-6) ----
   const podiumWrap = document.getElementById('podiumWrap');
+  function compositionTip(item){
+    const { prio, pronto, padrao } = scoreBreakdown(item.empreendimentos);
+    const emps = Object.entries(item.empreendimentos).sort((a,b)=>b[1]-a[1]);
+    const empList = emps.length
+      ? emps.map(([e,n])=>`<li><span>${e}</span><b>${n>1?n+'×':'1×'}</b></li>`).join('')
+      : '<li class="tip-none">Sem vendas — apenas bônus de indicação</li>';
+    const segs = [];
+    if(prio)   segs.push(`<span class="ts ts-prio" style="flex:${prio}"></span>`);
+    if(pronto) segs.push(`<span class="ts ts-pronto" style="flex:${pronto}"></span>`);
+    if(padrao) segs.push(`<span class="ts ts-padrao" style="flex:${padrao}"></span>`);
+    const legend = [];
+    if(prio)   legend.push(`<span><i class="d-prio"></i>${fmtVendas(prio)} prioritárias <em>25pts</em></span>`);
+    if(pronto) legend.push(`<span><i class="d-pronto"></i>${fmtVendas(pronto)} prontas <em>15pts</em></span>`);
+    if(padrao) legend.push(`<span><i class="d-padrao"></i>${fmtVendas(padrao)} demais <em>10pts</em></span>`);
+    const bonus = item.campeoVendasSemana ? `<span class="tip-bonus">⚽ +10 campeão de vendas</span>` : '';
+    const bonusI = item.indicacaoSemana ? `<span class="tip-bonus tip-bonus-i">⭐ +5 indicação da semana</span>` : '';
+    return `<div class="podium-tip" role="tooltip">
+      <div class="tip-title">Composição da pontuação</div>
+      ${segs.length?`<div class="tip-bar">${segs.join('')}</div>`:''}
+      ${legend.length?`<div class="tip-legend">${legend.join('')}</div>`:''}
+      <ul class="tip-emps">${empList}</ul>
+      ${(bonus||bonusI)?`<div class="tip-bonuses">${bonus}${bonusI}</div>`:''}
+      <div class="tip-foot">${fmtVendas(item.vendas)} venda(s) · ${fmtVGV(item.vgv)} VGV</div>
+    </div>`;
+  }
+
   function podiumCard(item, rankIdx, cssClass, isTop3){
     const sizeClass = isTop3 ? 'top3' : 'sub3';
     const crowns = {0:'🏆', 1:'', 2:''};
@@ -762,13 +827,15 @@
     const flag = item.indicacaoSemana ? '<span class="flag-indicacao-podio">⭐ indicações</span>'
                : item.campeoVendasSemana ? '<span class="flag-indicacao-podio" style="background:linear-gradient(120deg,#168a45,#0a5c30)">⚽ campeão de vendas</span>'
                : '';
-    return `<div class="podium-card ${cssClass} ${sizeClass}">
+    return `<div class="podium-card ${cssClass} ${sizeClass}" tabindex="0">
+      <span class="tip-hint" aria-hidden="true">i</span>
       ${crown}
       <div class="avatar">${initials(item.nome)}</div>
       <h4 title="${item.nome}">${item.nome}</h4>
       <div class="empresa">${topEmpreendimentos(item.empreendimentos,1)||'—'}</div>
       ${flag}
       <div class="pts">${item.pontos%1!==0?item.pontos.toFixed(1):item.pontos}<span>pontos</span></div>
+      ${compositionTip(item)}
       <div class="riser"><span class="place">${rankIdx+1}</span></div>
     </div>`;
   }
@@ -803,32 +870,47 @@
   const championsBar = document.getElementById('championsBar');
   function renderChampions(){
     const c = state.company;
-    const cv = weekCampeoes()[c].vendasSemana;
-    const ci = weekCampeoes()[c].indicacoes;
-    const roleLabels = {corretores:'corretor', gerentes:'gerente', diretores:'diretor'};
-    const vendasNames = Object.entries(cv).map(([role, nome]) => {
-      if(nome === null){
-        return `<span class="champ-name champ-tie"><em>${roleLabels[role] || role}: empate</em></span>`;
+    const camp = weekCampeoes()[c];
+    const rk = weekRanking()[c];
+    const cv = camp.vendasSemana;
+    const ci = camp.indicacoes || [];
+    const roleLabels = { corretores:'Corretores', gerentes:'Gerentes', diretores:'Diretores' };
+
+    const vsRows = ['corretores','gerentes','diretores'].map(role => {
+      const winners = cv[role] || [];
+      if(!winners.length){
+        return `<div class="cw-row"><span class="cw-role">${roleLabels[role]}</span><span class="cw-empate">empate · ninguém pontuou</span></div>`;
       }
-      return `<span class="champ-name">${nome} <em>${roleLabels[role] || role}</em></span>`;
+      const w0 = rk[role].find(p => p.nome === winners[0]);
+      const vc = w0 ? fmtVendas(w0.vendas) : '';
+      let names;
+      if(winners.length <= 3){
+        names = winners.map(n => `<span class="cw-name">${n}</span>`).join('')
+              + (vc ? ` <span class="cw-vc">${vc} venda(s)</span>` : '');
+      } else {
+        names = `<span class="cw-name cw-many">${winners.length} ${roleLabels[role].toLowerCase()}</span> <span class="cw-vc">${vc} venda(s) cada · todos +10</span>`;
+      }
+      return `<div class="cw-row"><span class="cw-role">${roleLabels[role]}</span><span class="cw-names">${names}</span></div>`;
     }).join('');
-    const indicNames = ci.map(n =>
-      `<span class="champ-name">${n} <em>corretor</em></span>`
-    ).join('');
+
+    const indHtml = ci.length
+      ? ci.map(n => `<span class="cw-name">${n}</span>`).join('')
+      : '<span class="cw-empate">a apurar</span>';
+
     championsBar.innerHTML = `
-      <div class="champion-card">
-        <div class="champ-icon">⚽</div>
-        <div class="champ-info">
-          <span class="champ-label">Campeão de Vendas da Semana</span>
-          <div class="champ-names">${vendasNames || '<span class="champ-name">— <em>a apurar</em></span>'}</div>
+      <div class="champ-panel champ-vendas">
+        <div class="champ-head">
+          <span class="champ-emoji">🏆</span>
+          <div><h5>Campeão de Vendas da Semana</h5><p>+10 pts para quem mais vendeu em cada categoria</p></div>
         </div>
+        <div class="champ-body">${vsRows}</div>
       </div>
-      <div class="champion-card">
-        <div class="champ-icon">⭐</div>
-        <div class="champ-info">
-          <span class="champ-label">Campeão de Indicações da Semana</span>
-          <div class="champ-names">${indicNames || '<span class="champ-name">— <em>a apurar</em></span>'}</div>
+      <div class="champ-panel champ-indic">
+        <div class="champ-head">
+          <span class="champ-emoji">⭐</span>
+          <div><h5>Campeão de Indicações da Semana</h5><p>+5 pts para o corretor que mais indicou</p></div>
         </div>
+        <div class="champ-body"><div class="cw-row"><span class="cw-role">Corretores</span><span class="cw-names">${indHtml}</span></div></div>
       </div>
     `;
   }

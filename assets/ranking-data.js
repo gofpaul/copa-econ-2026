@@ -3,25 +3,27 @@ const RANKING_DATA = {
     "corretores": [
       {
         "nome": "INFLUENCER+",
-        "pontos": 25.0,
+        "pontos": 35.0,
         "vendas": 2.5,
         "vgv": 807755.0,
         "empreendimentos": {
           "TEE": 3,
           "FLIX": 1,
           "SPIN": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "COMARCA+",
-        "pontos": 25.0,
+        "pontos": 35.0,
         "vendas": 2.5,
         "vgv": 807755.0,
         "empreendimentos": {
           "TEE": 3,
           "FLIX": 1,
           "SPIN": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "REGIS+",
@@ -493,192 +495,213 @@ const RANKING_DATA = {
     "corretores": [
       {
         "nome": "EDILSON DE CARVALHO MACEDO",
-        "pontos": 25.0,
+        "pontos": 35.0,
         "vendas": 1.0,
         "vgv": 369900.0,
         "empreendimentos": {
           "FREE": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "SOL",
-        "pontos": 15.0,
+        "pontos": 25.0,
         "vendas": 1.0,
         "vgv": 317700.0,
         "empreendimentos": {
           "TOPIC": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "JULIO CESAR NERI SOUZA",
-        "pontos": 15.0,
+        "pontos": 25.0,
         "vendas": 1.0,
         "vgv": 310000.0,
         "empreendimentos": {
           "TAG": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "LUX",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 559931.62,
         "empreendimentos": {
           "WIN": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "CABRAL",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 529900.0,
         "empreendimentos": {
           "GRAN SKY": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "HIEI",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 485900.0,
         "empreendimentos": {
           "NEO": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "ELISANGELA",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 459900.0,
         "empreendimentos": {
           "LIKE": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "JULIANA",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 399900.0,
         "empreendimentos": {
           "GREEN EMBIRA": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "ZEUS",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 391440.0,
         "empreendimentos": {
           "SPIN": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "ALESSANDRO DE ROSA IMOB",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 385000.0,
         "empreendimentos": {
           "VISION": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "PROFESSORA CD",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 371600.0,
         "empreendimentos": {
           "EVO": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "DEBORAH",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 369900.0,
         "empreendimentos": {
           "HYPE STYLE": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "GARDENIA",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 331600.0,
         "empreendimentos": {
           "GREEN EMBIRA": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "ALCENIR",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 320900.0,
         "empreendimentos": {
           "LIV": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "EULER",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 319900.0,
         "empreendimentos": {
           "VITA": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "ELINOR",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 315000.0,
         "empreendimentos": {
           "EVO": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "TEIXEIRA",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 289900.0,
         "empreendimentos": {
           "TEE": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "RONEI",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 278900.0,
         "empreendimentos": {
           "FLOW": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "OMAR",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 259900.0,
         "empreendimentos": {
           "HYPE STYLE": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "CONSTANTINE",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 259900.0,
         "empreendimentos": {
           "HYPE STYLE": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "EDUARDA",
-        "pontos": 10.0,
+        "pontos": 20.0,
         "vendas": 1.0,
         "vgv": 254900.0,
         "empreendimentos": {
           "GRID": 1
-        }
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "ILUMINADA",
@@ -709,32 +732,34 @@ const RANKING_DATA = {
     ],
     "gerentes": [
       {
+        "nome": "SOUZA",
+        "pontos": 30.0,
+        "vendas": 2.0,
+        "vgv": 784900.0,
+        "empreendimentos": {
+          "VISION": 1,
+          "GREEN EMBIRA": 1
+        },
+        "campeoVendasSemana": true
+      },
+      {
+        "nome": "VEIGGA",
+        "pontos": 30.0,
+        "vendas": 2.0,
+        "vgv": 593900.0,
+        "empreendimentos": {
+          "FLOW": 1,
+          "EVO": 1
+        },
+        "campeoVendasSemana": true
+      },
+      {
         "nome": "RAKKI",
         "pontos": 25.0,
         "vendas": 1.0,
         "vgv": 369900.0,
         "empreendimentos": {
           "FREE": 1
-        }
-      },
-      {
-        "nome": "SOUZA",
-        "pontos": 20.0,
-        "vendas": 2.0,
-        "vgv": 784900.0,
-        "empreendimentos": {
-          "VISION": 1,
-          "GREEN EMBIRA": 1
-        }
-      },
-      {
-        "nome": "VEIGGA",
-        "pontos": 20.0,
-        "vendas": 2.0,
-        "vgv": 593900.0,
-        "empreendimentos": {
-          "FLOW": 1,
-          "EVO": 1
         }
       },
       {
@@ -894,6 +919,33 @@ const RANKING_DATA = {
     ],
     "diretores": [
       {
+        "nome": "LUPETTI",
+        "pontos": 62.5,
+        "vendas": 4.5,
+        "vgv": 1621500.0,
+        "empreendimentos": {
+          "TAG": 1,
+          "NOW": 1,
+          "VISION": 1,
+          "GREEN EMBIRA": 2
+        },
+        "campeoVendasSemana": true
+      },
+      {
+        "nome": "TRINDADE",
+        "pontos": 57.5,
+        "vendas": 4.5,
+        "vgv": 1710240.0,
+        "empreendimentos": {
+          "GRAN SKY": 1,
+          "SPIN": 1,
+          "FLOW": 1,
+          "NOW": 1,
+          "EVO": 1
+        },
+        "campeoVendasSemana": true
+      },
+      {
         "nome": "THAIS",
         "pontos": 55.0,
         "vendas": 4.0,
@@ -903,31 +955,6 @@ const RANKING_DATA = {
           "LIKE": 1,
           "HYPE STYLE": 1,
           "GRID": 1
-        }
-      },
-      {
-        "nome": "LUPETTI",
-        "pontos": 52.5,
-        "vendas": 4.5,
-        "vgv": 1621500.0,
-        "empreendimentos": {
-          "TAG": 1,
-          "NOW": 1,
-          "VISION": 1,
-          "GREEN EMBIRA": 2
-        }
-      },
-      {
-        "nome": "TRINDADE",
-        "pontos": 47.5,
-        "vendas": 4.5,
-        "vgv": 1710240.0,
-        "empreendimentos": {
-          "GRAN SKY": 1,
-          "SPIN": 1,
-          "FLOW": 1,
-          "NOW": 1,
-          "EVO": 1
         }
       },
       {
@@ -1004,9 +1031,16 @@ const PRONTO_EMPREENDIMENTOS = [
 const CAMPEOS = {
   "mais": {
     "vendasSemana": {
-      "corretores": null,
-      "gerentes": "BODALO+",
-      "diretores": "FLORIANO+"
+      "corretores": [
+        "COMARCA+",
+        "INFLUENCER+"
+      ],
+      "gerentes": [
+        "BODALO+"
+      ],
+      "diretores": [
+        "FLORIANO+"
+      ]
     },
     "indicacoes": [
       "DRUMOND+CF+",
@@ -1016,9 +1050,37 @@ const CAMPEOS = {
   },
   "vendas": {
     "vendasSemana": {
-      "corretores": null,
-      "gerentes": null,
-      "diretores": null
+      "corretores": [
+        "ALCENIR",
+        "ALESSANDRO DE ROSA IMOB",
+        "CABRAL",
+        "CONSTANTINE",
+        "DEBORAH",
+        "EDILSON DE CARVALHO MACEDO",
+        "EDUARDA",
+        "ELINOR",
+        "ELISANGELA",
+        "EULER",
+        "GARDENIA",
+        "HIEI",
+        "JULIANA",
+        "JULIO CESAR NERI SOUZA",
+        "LUX",
+        "OMAR",
+        "PROFESSORA CD",
+        "RONEI",
+        "SOL",
+        "TEIXEIRA",
+        "ZEUS"
+      ],
+      "gerentes": [
+        "SOUZA",
+        "VEIGGA"
+      ],
+      "diretores": [
+        "LUPETTI",
+        "TRINDADE"
+      ]
     },
     "indicacoes": [
       "NEUMA"
@@ -1028,12 +1090,10 @@ const CAMPEOS = {
 
 // ============================================================
 //  APURACAO SEMANAL — registro das semanas da Copa Econ 2026
-//  A campanha dura 1 mes e e apurada toda semana. Para adicionar
-//  uma nova semana, crie os objetos de ranking/campeoes da semana
-//  (mesmo formato de RANKING_DATA / CAMPEOS) e registre um novo
-//  bloco aqui. Depois atualize SEMANA_ATUAL para a semana corrente.
-//  IMPORTANTE: imobiliarias (aba CorretoresImobiliaria) NAO participam —
-//  suas vendas nao pontuam para corretor, gerente nem diretor.
+//  Imobiliarias (aba CorretoresImobiliaria) NAO participam.
+//  Campeao de vendas: vencedores = todos no maximo de vendas;
+//  empate (lista vazia) so quando todos tem a mesma quantidade.
+//  Para nova semana: registre novo bloco e atualize SEMANA_ATUAL.
 // ============================================================
 const SEMANAS = {
   "semana-1": {
