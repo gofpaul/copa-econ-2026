@@ -494,7 +494,7 @@ const RANKING_DATA = {
   "vendas": {
     "corretores": [
       {
-        "nome": "EDILSON DE CARVALHO MACEDO",
+        "nome": "CARVALHO",
         "pontos": 25.0,
         "vendas": 1.0,
         "vgv": 369900.0,
@@ -509,15 +509,6 @@ const RANKING_DATA = {
         "vgv": 317700.0,
         "empreendimentos": {
           "TOPIC": 1
-        }
-      },
-      {
-        "nome": "JULIO CESAR NERI SOUZA",
-        "pontos": 15.0,
-        "vendas": 1.0,
-        "vgv": 310000.0,
-        "empreendimentos": {
-          "TAG": 1
         }
       },
       {
@@ -760,15 +751,6 @@ const RANKING_DATA = {
         }
       },
       {
-        "nome": "HUDSON",
-        "pontos": 15.0,
-        "vendas": 1.0,
-        "vgv": 310000.0,
-        "empreendimentos": {
-          "TAG": 1
-        }
-      },
-      {
         "nome": "SENADOR",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -897,15 +879,16 @@ const RANKING_DATA = {
     ],
     "diretores": [
       {
-        "nome": "LUPETTI",
-        "pontos": 62.5,
+        "nome": "TRINDADE",
+        "pontos": 57.5,
         "vendas": 4.5,
-        "vgv": 1621500.0,
+        "vgv": 1710240.0,
         "empreendimentos": {
-          "TAG": 1,
+          "GRAN SKY": 1,
+          "SPIN": 1,
+          "FLOW": 1,
           "NOW": 1,
-          "VISION": 1,
-          "GREEN EMBIRA": 2
+          "EVO": 1
         },
         "campeoVendasSemana": true
       },
@@ -922,16 +905,14 @@ const RANKING_DATA = {
         }
       },
       {
-        "nome": "TRINDADE",
-        "pontos": 47.5,
-        "vendas": 4.5,
-        "vgv": 1710240.0,
+        "nome": "LUPETTI",
+        "pontos": 37.5,
+        "vendas": 3.5,
+        "vgv": 1311500.0,
         "empreendimentos": {
-          "GRAN SKY": 1,
-          "SPIN": 1,
-          "FLOW": 1,
           "NOW": 1,
-          "EVO": 1
+          "VISION": 1,
+          "GREEN EMBIRA": 2
         }
       },
       {
@@ -1032,7 +1013,7 @@ const CAMPEOS = {
         "CAMILA"
       ],
       "diretores": [
-        "LUPETTI"
+        "TRINDADE"
       ]
     },
     "indicacoes": [
