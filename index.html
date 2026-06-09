@@ -706,7 +706,7 @@
   </div>
 </footer>
 
-<script src="assets/ranking-data.js?v=20260609c"></script>
+<script src="assets/ranking-data.js?v=20260609d"></script>
 <script>
   // ------------------------------------------------------------------
   // RANKING_DATA vem de assets/ranking-data.js, gerado a partir da aba
@@ -882,7 +882,7 @@
         return `<div class="cw-row"><span class="cw-role">${roleLabels[role]}</span><span class="cw-empate">empate · ninguém pontuou</span></div>`;
       }
       const w0 = rk[role].find(p => p.nome === winners[0]);
-      const vc = w0 ? fmtVendas(w0.vendas) : '';
+      const vc = w0 ? String(Object.values(w0.empreendimentos).reduce((a,b)=>a+b,0)) : '';
       let names;
       if(winners.length <= 3){
         names = winners.map(n => `<span class="cw-name">${n}</span>`).join('')
