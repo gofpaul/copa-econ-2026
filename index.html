@@ -59,18 +59,28 @@
   header{
     position:relative;
     background:
-      linear-gradient(180deg, rgba(10,23,48,.0) 0%, rgba(10,23,48,.55) 100%),
-      linear-gradient(125deg, var(--gold) 0%, var(--gold) 32%, var(--green) 33%, var(--green) 64%, var(--navy) 65%, var(--navy) 100%);
-    padding: 26px 6vw 90px;
+      radial-gradient(ellipse 70% 55% at 82% -8%, rgba(244,194,43,.20) 0%, transparent 58%),
+      radial-gradient(ellipse 65% 60% at 6% 112%, rgba(22,138,69,.20) 0%, transparent 55%),
+      linear-gradient(158deg, #123060 0%, #0c2348 48%, #081730 100%);
+    padding: 26px 6vw 96px;
     overflow:hidden;
   }
+  /* faint stadium-light beams */
   header::before{
     content:"";
     position:absolute; inset:0;
     background-image:
-      repeating-linear-gradient(8deg, rgba(255,255,255,.06) 0 2px, transparent 2px 26px),
-      repeating-linear-gradient(-12deg, rgba(0,0,0,.05) 0 1px, transparent 1px 34px);
-    mix-blend-mode:overlay; pointer-events:none;
+      repeating-linear-gradient(102deg, rgba(255,255,255,.035) 0 1px, transparent 1px 42px);
+    pointer-events:none;
+  }
+  /* subtle pitch arc on the far right */
+  header::after{
+    content:"";
+    position:absolute; right:-160px; top:50%; transform:translateY(-50%);
+    width:520px; height:520px; border-radius:50%;
+    border:1.5px solid rgba(244,194,43,.10);
+    box-shadow:0 0 0 60px rgba(244,194,43,.03);
+    pointer-events:none;
   }
 
   .topbar{ display:flex; align-items:center; justify-content:space-between; position:relative; z-index:3; flex-wrap:wrap; gap:18px; }
@@ -81,52 +91,36 @@
   }
   .brand-text .kicker{
     font-family:'Barlow Condensed', sans-serif; font-size:13px; letter-spacing:4px; text-transform:uppercase;
-    color:var(--navy-deep); opacity:.75; font-weight:600;
+    color:var(--gold); opacity:.9; font-weight:600;
   }
-  .brand-text h1.wordmark{ font-size:clamp(20px, 2.4vw, 28px); color:var(--navy-deep); }
+  .brand-text h1.wordmark{ font-size:clamp(20px, 2.4vw, 28px); color:var(--paper); }
 
   .logo-25anos-header{
-    height:52px; width:auto;
-    filter: drop-shadow(0 4px 12px rgba(10,15,30,.4));
+    height:46px; width:auto; display:block;
+    background:var(--paper); border-radius:12px; padding:8px 14px;
+    box-shadow:0 6px 18px -6px rgba(0,0,0,.45);
   }
 
   .hero{ position:relative; z-index:3; margin-top:64px; max-width:880px; }
   .hero .eyebrow{
     font-family:'Barlow Condensed', sans-serif; font-size:16px; letter-spacing:5px; text-transform:uppercase;
-    color:var(--navy-deep); font-weight:700; opacity:.8; display:flex; align-items:center; gap:12px; margin-bottom:14px;
+    color:var(--gold); font-weight:700; opacity:.95; display:flex; align-items:center; gap:12px; margin-bottom:14px;
   }
-  .hero .eyebrow::before{ content:""; display:inline-block; width:46px; height:3px; background:var(--navy-deep); opacity:.55; }
+  .hero .eyebrow::before{ content:""; display:inline-block; width:46px; height:3px; background:var(--gold); opacity:.7; }
   .hero h2{
     font-size:clamp(36px, 6.6vw, 78px); color:var(--paper);
-    text-shadow: 0 6px 0 rgba(10,23,48,.18), 0 18px 40px rgba(10,15,30,.35);
-    -webkit-text-stroke: 2px var(--navy-deep); paint-order: stroke fill;
+    text-shadow: 0 2px 0 rgba(0,0,0,.25), 0 18px 45px rgba(0,0,0,.5);
   }
-  .hero h2 .accent{ color:var(--gold); -webkit-text-stroke: 2px var(--navy-deep);}
-  .hero p.lead{ margin-top:22px; font-size:clamp(15px,1.6vw,18px); max-width:600px; line-height:1.65; color:rgba(10,23,48,.86); font-weight:500; }
-  .hero p.lead strong{color:var(--navy-deep);}
+  .hero h2 .accent{ color:var(--gold); }
+  .hero p.lead{ margin-top:22px; font-size:clamp(15px,1.6vw,18px); max-width:600px; line-height:1.65; color:rgba(246,239,220,.82); font-weight:500; }
+  .hero p.lead strong{color:var(--paper); font-weight:700;}
   .hero-meta{ margin-top:30px; display:flex; gap:14px; flex-wrap:wrap; }
   .meta-chip{
-    background:rgba(255,255,255,.55); backdrop-filter: blur(6px); border:1px solid rgba(10,23,48,.18); border-radius:12px;
+    background:rgba(255,255,255,.06); backdrop-filter: blur(8px); border:1px solid rgba(246,239,220,.16); border-radius:12px;
     padding:10px 16px; font-family:'Barlow Condensed', sans-serif; font-weight:600; font-size:14.5px; letter-spacing:.4px;
-    color:var(--navy-deep); display:flex; align-items:center; gap:8px;
+    color:rgba(246,239,220,.85); display:flex; align-items:center; gap:8px;
   }
-  .meta-chip b{font-family:'Teko'; font-size:19px; font-weight:600;}
-
-  .ball{
-    position:absolute; right:6vw; top:18px; width:128px; height:128px; border-radius:50%;
-    background: radial-gradient(circle at 32% 28%, #fff 0 8%, #efe9d8 9% 100%);
-    box-shadow: var(--shadow), inset -14px -14px 30px rgba(10,15,30,.18); opacity:.9; z-index:2;
-  }
-  .ball::before{
-    content:""; position:absolute; inset:0; border-radius:50%;
-    background-image:
-      radial-gradient(circle at 50% 18%, transparent 13%, var(--navy-deep) 14% 16%, transparent 17%),
-      radial-gradient(circle at 22% 46%, transparent 13%, var(--navy-deep) 14% 16%, transparent 17%),
-      radial-gradient(circle at 78% 46%, transparent 13%, var(--navy-deep) 14% 16%, transparent 17%),
-      radial-gradient(circle at 38% 78%, transparent 13%, var(--navy-deep) 14% 16%, transparent 17%),
-      radial-gradient(circle at 64% 78%, transparent 13%, var(--navy-deep) 14% 16%, transparent 17%);
-  }
-  @media (max-width: 880px){ .ball{display:none;} }
+  .meta-chip b{font-family:'Teko'; font-size:19px; font-weight:600; color:var(--gold);}
 
   /* =================== CONTROLS / SELECTORS =================== */
   .controls-wrap{ background:var(--navy-deep); position:sticky; top:0; z-index:50; box-shadow:0 12px 28px -16px rgba(0,0,0,.5);}
@@ -439,8 +433,6 @@
     </div>
     <img src="assets/logo-econ-25anos.png" alt="Econ 25 Anos" class="logo-25anos-header">
   </div>
-
-  <div class="ball" aria-hidden="true"></div>
 
   <div class="hero">
     <div class="eyebrow">Ranking oficial · Econ Mais &amp; Econ Vendas</div>
