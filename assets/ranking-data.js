@@ -1015,30 +1015,6 @@ const RANKING_DATA_S2 = {
   "mais": {
     "corretores": [
       {
-        "nome": "COMARCA+",
-        "pontos": 25.0,
-        "vendas": 1.5,
-        "vgv": 499950.0,
-        "empreendimentos": {
-          "TEE": 1,
-          "SPIN": 1,
-          "MANACA": 1
-        },
-        "campeoVendasSemana": true
-      },
-      {
-        "nome": "INFLUENCER+",
-        "pontos": 25.0,
-        "vendas": 1.5,
-        "vgv": 499950.0,
-        "empreendimentos": {
-          "TEE": 1,
-          "SPIN": 1,
-          "MANACA": 1
-        },
-        "campeoVendasSemana": true
-      },
-      {
         "nome": "ELECTRO+",
         "pontos": 25.0,
         "vendas": 1.0,
@@ -1064,6 +1040,30 @@ const RANKING_DATA_S2 = {
         "empreendimentos": {
           "RANGEL": 1
         }
+      },
+      {
+        "nome": "COMARCA+",
+        "pontos": 25.0,
+        "vendas": 1.5,
+        "vgv": 499950.0,
+        "empreendimentos": {
+          "TEE": 1,
+          "SPIN": 1,
+          "MANACA": 1
+        },
+        "campeoVendasSemana": true
+      },
+      {
+        "nome": "INFLUENCER+",
+        "pontos": 25.0,
+        "vendas": 1.5,
+        "vgv": 499950.0,
+        "empreendimentos": {
+          "TEE": 1,
+          "SPIN": 1,
+          "MANACA": 1
+        },
+        "campeoVendasSemana": true
       },
       {
         "nome": "CONTADINI+",
@@ -1447,7 +1447,7 @@ const RANKING_DATA_S2 = {
         "campeoVendasSemana": true
       },
       {
-        "nome": "EDILSON DE CARVALHO MACEDO",
+        "nome": "CARVALHO",
         "pontos": 25.0,
         "vendas": 1.0,
         "vgv": 369900.0,
@@ -1768,6 +1768,8 @@ const CAMPEOS = CAMPEOS_S2;
 //  Conta apenas vendas STATUS == 'DR'.
 //  Campeao de vendas (cascata): participacao (fifty=1) > criticas >
 //  prontas > VGV. Empate so quando todos tem a mesma quantidade.
+//  Ordem do ranking (desempate por qualidade): pontos > criticas >
+//  prontas > VGV > quantidade de vendas.
 //  Nova semana: adicione o arquivo em SEMANAS_CFG no regen.py e rode.
 // ============================================================
 const SEMANAS = {
