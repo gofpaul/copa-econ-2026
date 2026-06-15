@@ -1456,15 +1456,6 @@ const RANKING_DATA_S2 = {
         }
       },
       {
-        "nome": "JULIO CESAR NERI SOUZA",
-        "pontos": 15.0,
-        "vendas": 1.0,
-        "vgv": 310000.0,
-        "empreendimentos": {
-          "TAG": 1
-        }
-      },
-      {
         "nome": "LUX",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -1557,13 +1548,13 @@ const RANKING_DATA_S2 = {
     ],
     "gerentes": [
       {
-        "nome": "HUDSON",
-        "pontos": 35.0,
-        "vendas": 2.0,
-        "vgv": 629900.0,
+        "nome": "MOURA",
+        "pontos": 27.5,
+        "vendas": 1.5,
+        "vgv": 594900.0,
         "empreendimentos": {
-          "TAG": 1,
-          "VITA": 1
+          "NOW": 1,
+          "PARK": 1
         },
         "campeoVendasSemana": true
       },
@@ -1574,16 +1565,6 @@ const RANKING_DATA_S2 = {
         "vgv": 369900.0,
         "empreendimentos": {
           "FREE": 1
-        }
-      },
-      {
-        "nome": "MOURA",
-        "pontos": 17.5,
-        "vendas": 1.5,
-        "vgv": 594900.0,
-        "empreendimentos": {
-          "NOW": 1,
-          "PARK": 1
         }
       },
       {
@@ -1642,6 +1623,15 @@ const RANKING_DATA_S2 = {
         }
       },
       {
+        "nome": "HUDSON",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 319900.0,
+        "empreendimentos": {
+          "VITA": 1
+        }
+      },
+      {
         "nome": "VEIGGA",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -1663,11 +1653,10 @@ const RANKING_DATA_S2 = {
     "diretores": [
       {
         "nome": "LUPETTI",
-        "pontos": 62.5,
-        "vendas": 4.5,
-        "vgv": 1624700.0,
+        "pontos": 47.5,
+        "vendas": 3.5,
+        "vgv": 1314700.0,
         "empreendimentos": {
-          "TAG": 1,
           "NOW": 1,
           "GREEN EMBIRA": 1,
           "PARK": 1,
@@ -1749,7 +1738,7 @@ const CAMPEOS_S2 = {
         "ILUMINADA"
       ],
       "gerentes": [
-        "HUDSON"
+        "MOURA"
       ],
       "diretores": [
         "LUPETTI"
@@ -1775,7 +1764,7 @@ const CAMPEOS = CAMPEOS_S2;
 
 // ============================================================
 //  APURACAO SEMANAL — Copa Econ 2026
-//  Imobiliarias (aba CorretoresImobiliaria) NAO participam.
+//  Imobiliarias (aba CorretoresImobiliaria + FORCE_IMOB) NAO participam.
 //  Conta apenas vendas STATUS == 'DR'.
 //  Campeao de vendas (cascata): participacao (fifty=1) > criticas >
 //  prontas > VGV. Empate so quando todos tem a mesma quantidade.
