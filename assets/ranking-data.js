@@ -1217,6 +1217,14 @@ const RANKING_DATA_S2 = {
         "empreendimentos": {
           "PARK": 1
         }
+      },
+      {
+        "nome": "DONNA+",
+        "pontos": 5.0,
+        "vendas": 0.0,
+        "vgv": 0.0,
+        "empreendimentos": {},
+        "indicacaoSemana": true
       }
     ],
     "gerentes": [
@@ -1544,6 +1552,14 @@ const RANKING_DATA_S2 = {
         "empreendimentos": {
           "NOW": 1
         }
+      },
+      {
+        "nome": "ALCENIR",
+        "pontos": 5.0,
+        "vendas": 0.0,
+        "vgv": 0.0,
+        "empreendimentos": {},
+        "indicacaoSemana": true
       }
     ],
     "gerentes": [
@@ -1730,7 +1746,9 @@ const CAMPEOS_S2 = {
         "FLORIANO+"
       ]
     },
-    "indicacoes": []
+    "indicacoes": [
+      "DONNA+"
+    ]
   },
   "vendas": {
     "vendasSemana": {
@@ -1744,7 +1762,9 @@ const CAMPEOS_S2 = {
         "LUPETTI"
       ]
     },
-    "indicacoes": []
+    "indicacoes": [
+      "ALCENIR"
+    ]
   }
 };
 
@@ -1768,8 +1788,8 @@ const CAMPEOS = CAMPEOS_S2;
 //  Conta apenas vendas STATUS == 'DR'.
 //  Campeao de vendas (cascata): participacao (fifty=1) > criticas >
 //  prontas > VGV. Empate so quando todos tem a mesma quantidade.
-//  Ordem do ranking (desempate por qualidade): pontos > criticas >
-//  prontas > VGV > quantidade de vendas.
+//  Campeao de indicacoes: informado manualmente em INDIC_POR_SEMANA (+5 corretor).
+//  Ordem do ranking (qualidade): pontos > criticas > prontas > VGV > qtd.
 //  Nova semana: adicione o arquivo em SEMANAS_CFG no regen.py e rode.
 // ============================================================
 const SEMANAS = {
