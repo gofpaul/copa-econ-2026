@@ -51,23 +51,22 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
-        "nome": "DONNA+",
-        "pontos": 55.0,
-        "vendas": 5.0,
-        "vgv": 1529500.0,
-        "empreendimentos": {
-          "FAST": 4,
-          "GRID": 1
-        },
-        "indicacaoSemana": true
-      },
-      {
         "nome": "REGIS+",
         "pontos": 50.0,
         "vendas": 2.0,
         "vgv": 599800.0,
         "empreendimentos": {
           "RANGEL": 2
+        }
+      },
+      {
+        "nome": "DONNA+",
+        "pontos": 50.0,
+        "vendas": 5.0,
+        "vgv": 1529500.0,
+        "empreendimentos": {
+          "FAST": 4,
+          "GRID": 1
         }
       },
       {
@@ -309,16 +308,6 @@ const RANKING_DATA_GERAL = {
           "RED": 1,
           "VERO HARMONIA": 1
         }
-      },
-      {
-        "nome": "EDCARLOS+",
-        "pontos": 15.0,
-        "vendas": 1.0,
-        "vgv": 289900.0,
-        "empreendimentos": {
-          "INOV": 1
-        },
-        "indicacaoSemana": true
       },
       {
         "nome": "MONTANHA+",
@@ -690,6 +679,15 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
+        "nome": "EDCARLOS+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 289900.0,
+        "empreendimentos": {
+          "INOV": 1
+        }
+      },
+      {
         "nome": "BARONESA+",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -895,22 +893,6 @@ const RANKING_DATA_GERAL = {
         "empreendimentos": {
           "LIV": 1
         }
-      },
-      {
-        "nome": "DRUMOND+CF+",
-        "pontos": 5.0,
-        "vendas": 0.0,
-        "vgv": 0.0,
-        "empreendimentos": {},
-        "indicacaoSemana": true
-      },
-      {
-        "nome": "MIRANDA+",
-        "pontos": 5.0,
-        "vendas": 0.0,
-        "vgv": 0.0,
-        "empreendimentos": {},
-        "indicacaoSemana": true
       }
     ],
     "gerentes": [
@@ -1755,16 +1737,6 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
-        "nome": "ALCENIR",
-        "pontos": 15.0,
-        "vendas": 1.0,
-        "vgv": 320900.0,
-        "empreendimentos": {
-          "LIV": 1
-        },
-        "indicacaoSemana": true
-      },
-      {
         "nome": "ALLAN FERNANDA DE MELO SANTOS22",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -2008,6 +1980,15 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
+        "nome": "ALCENIR",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 320900.0,
+        "empreendimentos": {
+          "LIV": 1
+        }
+      },
+      {
         "nome": "MIQUEIAS",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -2168,14 +2149,6 @@ const RANKING_DATA_GERAL = {
         "empreendimentos": {
           "NOW": 1
         }
-      },
-      {
-        "nome": "NEUMA",
-        "pontos": 5.0,
-        "vendas": 0.0,
-        "vgv": 0.0,
-        "empreendimentos": {},
-        "indicacaoSemana": true
       }
     ],
     "gerentes": [
@@ -2743,12 +2716,7 @@ const CAMPEOS_GERAL = {
         "FLORIANO+"
       ]
     },
-    "indicacoes": [
-      "DONNA+",
-      "DRUMOND+CF+",
-      "EDCARLOS+",
-      "MIRANDA+"
-    ]
+    "indicacoes": []
   },
   "vendas": {
     "vendasSemana": {
@@ -2762,10 +2730,7 @@ const CAMPEOS_GERAL = {
         "LUPETTI"
       ]
     },
-    "indicacoes": [
-      "ALCENIR",
-      "NEUMA"
-    ]
+    "indicacoes": []
   }
 };
 
@@ -4899,6 +4864,30 @@ const RANKING_DATA_S3 = {
         "empreendimentos": {
           "LIV": 1
         }
+      },
+      {
+        "nome": "ANDIM+",
+        "pontos": 5.0,
+        "vendas": 0.0,
+        "vgv": 0.0,
+        "empreendimentos": {},
+        "indicacaoSemana": true
+      },
+      {
+        "nome": "IARA+",
+        "pontos": 5.0,
+        "vendas": 0.0,
+        "vgv": 0.0,
+        "empreendimentos": {},
+        "indicacaoSemana": true
+      },
+      {
+        "nome": "TIAGO+",
+        "pontos": 5.0,
+        "vendas": 0.0,
+        "vgv": 0.0,
+        "empreendimentos": {},
+        "indicacaoSemana": true
       }
     ],
     "gerentes": [
@@ -5307,6 +5296,16 @@ const RANKING_DATA_S3 = {
         }
       },
       {
+        "nome": "LOIRA",
+        "pontos": 15.0,
+        "vendas": 1.0,
+        "vgv": 319400.0,
+        "empreendimentos": {
+          "LIV": 1
+        },
+        "indicacaoSemana": true
+      },
+      {
         "nome": "HIEI",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -5406,15 +5405,6 @@ const RANKING_DATA_S3 = {
         }
       },
       {
-        "nome": "LOIRA",
-        "pontos": 10.0,
-        "vendas": 1.0,
-        "vgv": 319400.0,
-        "empreendimentos": {
-          "LIV": 1
-        }
-      },
-      {
         "nome": "CONSTANTINE",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -5476,6 +5466,14 @@ const RANKING_DATA_S3 = {
         "empreendimentos": {
           "HYPE STYLE": 1
         }
+      },
+      {
+        "nome": "EDYMAR",
+        "pontos": 5.0,
+        "vendas": 0.0,
+        "vgv": 0.0,
+        "empreendimentos": {},
+        "indicacaoSemana": true
       }
     ],
     "gerentes": [
@@ -5755,7 +5753,11 @@ const CAMPEOS_S3 = {
         "FLORIANO+"
       ]
     },
-    "indicacoes": []
+    "indicacoes": [
+      "ANDIM+",
+      "IARA+",
+      "TIAGO+"
+    ]
   },
   "vendas": {
     "vendasSemana": {
@@ -5769,7 +5771,10 @@ const CAMPEOS_S3 = {
         "NOTURNO"
       ]
     },
-    "indicacoes": []
+    "indicacoes": [
+      "EDYMAR",
+      "LOIRA"
+    ]
   }
 };
 
@@ -5790,9 +5795,8 @@ const CAMPEOS = CAMPEOS_GERAL;
 
 // ============================================================
 //  COPA ECON 2026 — Junho.
-//  Semanas 1 e 2 congeladas (entregues). Semana 3 e Geral contam DR + DNR.
-//  Exclui CLASS PRIME/SELECT e IMP JACARANDA/ARAUCARIA. Ocean View/Ton = Pronto.
-//  Imobiliarias nao pontuam (mapeamento sem.1-2 + ajustes). Geral = mes 01-22.
+//  Semanas 1 e 2 congeladas. Semana 3 e Geral contam DR + DNR.
+//  Geral (mes) NAO computa indicacao ainda. Imobiliarias nao pontuam.
 // ============================================================
 const SEMANAS = {
   "geral":    { label: "Geral do mês",        periodo: "01 a 22 de junho", ordem: 0, ranking: RANKING_DATA_GERAL, campeoes: CAMPEOS_GERAL },
