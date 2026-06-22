@@ -706,7 +706,7 @@
   </div>
 </footer>
 
-<script src="assets/ranking-data.js?v=20260615d"></script>
+<script src="assets/ranking-data.js?v=20260622b"></script>
 <script>
   // ------------------------------------------------------------------
   // RANKING_DATA vem de assets/ranking-data.js, gerado a partir da aba
@@ -874,6 +874,7 @@
     const rk = weekRanking()[c];
     const cv = camp.vendasSemana;
     const ci = camp.indicacoes || [];
+    const periodoTxt = (state.semana === 'geral') ? 'do Mês' : 'da Semana';
     const roleLabels = { corretores:'Corretores', gerentes:'Gerentes', diretores:'Diretores' };
 
     const vsRows = ['corretores','gerentes','diretores'].map(role => {
@@ -901,14 +902,14 @@
       <div class="champ-panel champ-vendas">
         <div class="champ-head">
           <span class="champ-emoji">🏆</span>
-          <div><h5>Campeão de Vendas da Semana</h5><p>+10 pts para quem mais vendeu em cada categoria</p></div>
+          <div><h5>Campeão de Vendas ${periodoTxt}</h5><p>+10 pts para quem mais vendeu em cada categoria</p></div>
         </div>
         <div class="champ-body">${vsRows}</div>
       </div>
       <div class="champ-panel champ-indic">
         <div class="champ-head">
           <span class="champ-emoji">⭐</span>
-          <div><h5>Campeão de Indicações da Semana</h5><p>+5 pts para o corretor que mais indicou</p></div>
+          <div><h5>Campeão de Indicações ${periodoTxt}</h5><p>+5 pts para o corretor que mais indicou</p></div>
         </div>
         <div class="champ-body"><div class="cw-row"><span class="cw-role">Corretores</span><span class="cw-names">${indHtml}</span></div></div>
       </div>
@@ -1043,7 +1044,7 @@
     document.getElementById('ctxLabel').textContent = `${COMPANY_LABEL[state.company].toUpperCase()} · ${ROLE_LABEL[state.role].toUpperCase()}`;
     // título do pódio por semana
     const pt = document.getElementById('podiumTitle');
-    if(pt) pt.textContent = `O pódio da ${sem.label}`;
+    if(pt) pt.textContent = (state.semana === 'geral') ? `Pódio — ${sem.label}` : `O pódio da ${sem.label}`;
     const ptag = document.getElementById('podiumTag');
     if(ptag) ptag.textContent = `Top 6 · ${sem.label}`;
     const periodo = document.getElementById('metaPeriodoLabel');
