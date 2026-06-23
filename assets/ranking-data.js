@@ -117,6 +117,15 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
+        "nome": "MADALENA+",
+        "pontos": 15.0,
+        "vendas": 1.0,
+        "vgv": 369900.0,
+        "empreendimentos": {
+          "LINE": 1
+        }
+      },
+      {
         "nome": "PRÍNCIPE+BCF+",
         "pontos": 15.0,
         "vendas": 1.0,
@@ -268,15 +277,6 @@ const RANKING_DATA_GERAL = {
         "vgv": 380300.0,
         "empreendimentos": {
           "GREEN EMBIRA": 1
-        }
-      },
-      {
-        "nome": "MADALENA+",
-        "pontos": 10.0,
-        "vendas": 1.0,
-        "vgv": 369900.0,
-        "empreendimentos": {
-          "LINE": 1
         }
       },
       {
@@ -566,7 +566,7 @@ const RANKING_DATA_GERAL = {
       },
       {
         "nome": "MATTES+",
-        "pontos": 55.0,
+        "pontos": 60.0,
         "vendas": 5.0,
         "vgv": 1907300.0,
         "empreendimentos": {
@@ -906,7 +906,7 @@ const RANKING_DATA_GERAL = {
     "diretores": [
       {
         "nome": "FLORIANO+",
-        "pontos": 365.0,
+        "pontos": 370.0,
         "vendas": 30.0,
         "vgv": 10339100.0,
         "empreendimentos": {
@@ -4057,6 +4057,7 @@ const CAMPEOS_S3 = {
 
 const PRONTO_EMPREENDIMENTOS = [
   "FORT",
+  "LINE",
   "NORT",
   "NOW",
   "OCEAN VIEW",
@@ -4073,7 +4074,7 @@ const CAMPEOS = CAMPEOS_GERAL;
 // ============================================================
 //  COPA ECON 2026 — Junho. Inclusao = CONFIRMADO + Nº CONTRATO (com numero).
 //  Semanas 1 e 2 congeladas. Semana 3 = 15-21. Geral = 01-21.
-//  Geral (mes) NAO computa indicacao ainda. Imobiliarias nao pontuam.
+//  Pronto: + Ocean View, Ton, Line. Geral sem indicacao ainda.
 // ============================================================
 const SEMANAS = {
   "geral":    { label: "Geral do mês",        periodo: "01 a 21 de junho", ordem: 0, ranking: RANKING_DATA_GERAL, campeoes: CAMPEOS_GERAL },
