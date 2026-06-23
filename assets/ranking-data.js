@@ -12,11 +12,11 @@ const RANKING_DATA_GERAL = {
       },
       {
         "nome": "COMARCA+",
-        "pontos": 45.0,
-        "vendas": 3.5,
-        "vgv": 1110500.0,
+        "pontos": 50.0,
+        "vendas": 4.0,
+        "vgv": 1255450.0,
         "empreendimentos": {
-          "TEE": 4,
+          "TEE": 5,
           "SPIN": 2,
           "MANACÁ": 1
         },
@@ -24,15 +24,25 @@ const RANKING_DATA_GERAL = {
       },
       {
         "nome": "INFLUENCER+",
-        "pontos": 45.0,
-        "vendas": 3.5,
-        "vgv": 1110500.0,
+        "pontos": 50.0,
+        "vendas": 4.0,
+        "vgv": 1255450.0,
         "empreendimentos": {
-          "TEE": 4,
+          "TEE": 5,
           "SPIN": 2,
           "MANACÁ": 1
         },
         "campeoVendasSemana": true
+      },
+      {
+        "nome": "DONNA+",
+        "pontos": 40.0,
+        "vendas": 4.0,
+        "vgv": 1169600.0,
+        "empreendimentos": {
+          "FAST": 3,
+          "GRID": 1
+        }
       },
       {
         "nome": "MALEIA+",
@@ -59,6 +69,15 @@ const RANKING_DATA_GERAL = {
         "vgv": 369900.0,
         "empreendimentos": {
           "FREE": 1
+        }
+      },
+      {
+        "nome": "MAJU+",
+        "pontos": 25.0,
+        "vendas": 1.0,
+        "vgv": 349900.0,
+        "empreendimentos": {
+          "RANGEL": 1
         }
       },
       {
@@ -89,16 +108,6 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
-        "nome": "DONNA+",
-        "pontos": 20.0,
-        "vendas": 2.0,
-        "vgv": 554800.0,
-        "empreendimentos": {
-          "FAST": 1,
-          "GRID": 1
-        }
-      },
-      {
         "nome": "CONTADINI+",
         "pontos": 15.0,
         "vendas": 1.0,
@@ -114,6 +123,25 @@ const RANKING_DATA_GERAL = {
         "vgv": 301400.0,
         "empreendimentos": {
           "NORT": 1
+        }
+      },
+      {
+        "nome": "DINHA IMOB+",
+        "pontos": 15.0,
+        "vendas": 1.0,
+        "vgv": 207600.0,
+        "empreendimentos": {
+          "VERO ENCANTO": 1
+        }
+      },
+      {
+        "nome": "NAIROBI+",
+        "pontos": 15.0,
+        "vendas": 1.5,
+        "vgv": 649950.0,
+        "empreendimentos": {
+          "RED": 1,
+          "VERO HARMONIA": 1
         }
       },
       {
@@ -198,15 +226,6 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
-        "nome": "NAIROBI+",
-        "pontos": 10.0,
-        "vendas": 1.0,
-        "vgv": 490000.0,
-        "empreendimentos": {
-          "RED": 1
-        }
-      },
-      {
         "nome": "SOPRANO+",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -234,6 +253,15 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
+        "nome": "PRISCO+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 389000.0,
+        "empreendimentos": {
+          "SPIN": 1
+        }
+      },
+      {
         "nome": "RIVA+CF",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -253,6 +281,15 @@ const RANKING_DATA_GERAL = {
       },
       {
         "nome": "JASMINE+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 366400.0,
+        "empreendimentos": {
+          "TEE": 1
+        }
+      },
+      {
+        "nome": "ANTONIETA+",
         "pontos": 10.0,
         "vendas": 1.0,
         "vgv": 366400.0,
@@ -342,6 +379,15 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
+        "nome": "MILADY+TF+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 301880.23,
+        "empreendimentos": {
+          "FLOW": 1
+        }
+      },
+      {
         "nome": "PEROLA+CF+",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -366,6 +412,15 @@ const RANKING_DATA_GERAL = {
         "vgv": 289900.0,
         "empreendimentos": {
           "INOV": 1
+        }
+      },
+      {
+        "nome": "MARTA+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 275000.0,
+        "empreendimentos": {
+          "FLOW": 1
         }
       },
       {
@@ -411,6 +466,15 @@ const RANKING_DATA_GERAL = {
         "vgv": 254900.0,
         "empreendimentos": {
           "INOV": 1
+        }
+      },
+      {
+        "nome": "SANDY+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 254900.0,
+        "empreendimentos": {
+          "FAST": 1
         }
       },
       {
@@ -466,16 +530,25 @@ const RANKING_DATA_GERAL = {
         "empreendimentos": {
           "PARK": 1
         }
+      },
+      {
+        "nome": "MENEZES+B+",
+        "pontos": 5.0,
+        "vendas": 0.5,
+        "vgv": 159950.0,
+        "empreendimentos": {
+          "VERO HARMONIA": 1
+        }
       }
     ],
     "gerentes": [
       {
         "nome": "BODALO+",
-        "pontos": 80.0,
-        "vendas": 7.0,
-        "vgv": 2221000.0,
+        "pontos": 90.0,
+        "vendas": 8.0,
+        "vgv": 2510900.0,
         "empreendimentos": {
-          "TEE": 4,
+          "TEE": 5,
           "SPIN": 2,
           "MANACÁ": 1
         },
@@ -483,12 +556,24 @@ const RANKING_DATA_GERAL = {
       },
       {
         "nome": "PONTES+",
-        "pontos": 60.0,
-        "vendas": 3.0,
-        "vgv": 980100.0,
+        "pontos": 85.0,
+        "vendas": 4.0,
+        "vgv": 1330000.0,
         "empreendimentos": {
-          "RANGEL": 2,
+          "RANGEL": 3,
           "GREEN EMBIRA": 1
+        }
+      },
+      {
+        "nome": "MATTES+",
+        "pontos": 55.0,
+        "vendas": 5.0,
+        "vgv": 1907300.0,
+        "empreendimentos": {
+          "RED": 2,
+          "LINE": 1,
+          "VERO ENCANTO": 1,
+          "VERO HARMONIA": 1
         }
       },
       {
@@ -500,6 +585,27 @@ const RANKING_DATA_GERAL = {
           "LINK": 1,
           "GREEN EMBIRA": 1,
           "FREE": 1
+        }
+      },
+      {
+        "nome": "MELBRANDAAO+",
+        "pontos": 45.0,
+        "vendas": 3.0,
+        "vgv": 985300.0,
+        "empreendimentos": {
+          "SPIN": 1,
+          "RANGEL": 1,
+          "TEE": 1
+        }
+      },
+      {
+        "nome": "LEBLON+",
+        "pontos": 40.0,
+        "vendas": 4.0,
+        "vgv": 1169600.0,
+        "empreendimentos": {
+          "FAST": 3,
+          "GRID": 1
         }
       },
       {
@@ -533,16 +639,6 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
-        "nome": "MATTES+",
-        "pontos": 30.0,
-        "vendas": 3.0,
-        "vgv": 1379800.0,
-        "empreendimentos": {
-          "RED": 2,
-          "LINE": 1
-        }
-      },
-      {
         "nome": "MARCELA+",
         "pontos": 30.0,
         "vendas": 3.0,
@@ -559,15 +655,6 @@ const RANKING_DATA_GERAL = {
         "vgv": 431300.0,
         "empreendimentos": {
           "FREE": 1
-        }
-      },
-      {
-        "nome": "MELBRANDAAO+",
-        "pontos": 25.0,
-        "vendas": 1.0,
-        "vgv": 229900.0,
-        "empreendimentos": {
-          "RANGEL": 1
         }
       },
       {
@@ -597,16 +684,6 @@ const RANKING_DATA_GERAL = {
         "vgv": 567800.0,
         "empreendimentos": {
           "FLOW": 2
-        }
-      },
-      {
-        "nome": "LEBLON+",
-        "pontos": 20.0,
-        "vendas": 2.0,
-        "vgv": 554800.0,
-        "empreendimentos": {
-          "FAST": 1,
-          "GRID": 1
         }
       },
       {
@@ -754,12 +831,30 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
+        "nome": "LORD+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 301880.23,
+        "empreendimentos": {
+          "FLOW": 1
+        }
+      },
+      {
         "nome": "RAFAELA+",
         "pontos": 10.0,
         "vendas": 1.0,
         "vgv": 289900.0,
         "empreendimentos": {
           "INOV": 1
+        }
+      },
+      {
+        "nome": "JIMMY+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 275000.0,
+        "empreendimentos": {
+          "FLOW": 1
         }
       },
       {
@@ -797,39 +892,51 @@ const RANKING_DATA_GERAL = {
         "empreendimentos": {
           "INOV": 1
         }
+      },
+      {
+        "nome": "ERIMAR+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 254900.0,
+        "empreendimentos": {
+          "FAST": 1
+        }
       }
     ],
     "diretores": [
       {
         "nome": "FLORIANO+",
-        "pontos": 290.0,
-        "vendas": 23.0,
-        "vgv": 8236400.0,
+        "pontos": 365.0,
+        "vendas": 30.0,
+        "vgv": 10339100.0,
         "empreendimentos": {
           "EPIC": 1,
+          "SPIN": 3,
           "INOV": 1,
           "PARK": 1,
-          "TEE": 5,
+          "TEE": 7,
           "RED": 3,
-          "SPIN": 2,
           "RANGEL": 2,
           "FREE": 1,
           "LINE": 1,
-          "FLOW": 1,
+          "FLOW": 2,
           "MANACÁ": 2,
           "LINK": 1,
           "LIV": 1,
-          "NORT": 1
+          "VERO ENCANTO": 1,
+          "NORT": 1,
+          "FAST": 1,
+          "VERO HARMONIA": 1
         },
         "campeoVendasSemana": true
       },
       {
         "nome": "BRASIL+",
-        "pontos": 145.0,
-        "vendas": 10.0,
-        "vgv": 4129300.0,
+        "pontos": 170.0,
+        "vendas": 11.0,
+        "vgv": 4479200.0,
         "empreendimentos": {
-          "RANGEL": 2,
+          "RANGEL": 3,
           "LIKE": 1,
           "FORT": 1,
           "OCEAN VIEW": 2,
@@ -837,6 +944,21 @@ const RANKING_DATA_GERAL = {
           "GREEN EMBIRA": 1,
           "GRAN SKY": 1,
           "FLOW": 1
+        }
+      },
+      {
+        "nome": "TOME+",
+        "pontos": 100.0,
+        "vendas": 10.0,
+        "vgv": 3458600.0,
+        "empreendimentos": {
+          "FAST": 3,
+          "WIN": 1,
+          "GREEN EMBIRA": 2,
+          "HYPE STYLE": 1,
+          "LINK": 1,
+          "GRID": 1,
+          "INOV": 1
         }
       },
       {
@@ -855,21 +977,6 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
-        "nome": "TOME+",
-        "pontos": 80.0,
-        "vendas": 8.0,
-        "vgv": 2843800.0,
-        "empreendimentos": {
-          "FAST": 1,
-          "WIN": 1,
-          "GREEN EMBIRA": 2,
-          "HYPE STYLE": 1,
-          "LINK": 1,
-          "GRID": 1,
-          "INOV": 1
-        }
-      },
-      {
         "nome": "CABRAL+",
         "pontos": 75.0,
         "vendas": 6.0,
@@ -884,12 +991,13 @@ const RANKING_DATA_GERAL = {
       },
       {
         "nome": "DELUCA+",
-        "pontos": 20.0,
-        "vendas": 2.0,
-        "vgv": 864400.0,
+        "pontos": 30.0,
+        "vendas": 3.0,
+        "vgv": 1166280.23,
         "empreendimentos": {
           "EPIC": 1,
-          "EVO": 1
+          "EVO": 1,
+          "FLOW": 1
         }
       }
     ]
@@ -932,6 +1040,25 @@ const RANKING_DATA_GERAL = {
         "vgv": 280011.0,
         "empreendimentos": {
           "BUONO": 1
+        }
+      },
+      {
+        "nome": "LETICIA ANDRIANI SOUZA",
+        "pontos": 25.0,
+        "vendas": 1.0,
+        "vgv": 269999.0,
+        "empreendimentos": {
+          "SOUL": 1
+        }
+      },
+      {
+        "nome": "LOREAL",
+        "pontos": 20.0,
+        "vendas": 2.0,
+        "vgv": 784900.0,
+        "empreendimentos": {
+          "LIKE": 1,
+          "FLOW": 1
         }
       },
       {
@@ -982,6 +1109,15 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
+        "nome": "VERUSKA",
+        "pontos": 15.0,
+        "vendas": 1.0,
+        "vgv": 210000.0,
+        "empreendimentos": {
+          "VERO ENCANTO": 1
+        }
+      },
+      {
         "nome": "ALLAN FERNANDA DE MELO SANTOS22",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -1027,21 +1163,21 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
-        "nome": "LOREAL",
-        "pontos": 10.0,
-        "vendas": 1.0,
-        "vgv": 509900.0,
-        "empreendimentos": {
-          "LIKE": 1
-        }
-      },
-      {
         "nome": "ESCOBAR",
         "pontos": 10.0,
         "vendas": 1.0,
         "vgv": 502500.0,
         "empreendimentos": {
           "NEO": 1
+        }
+      },
+      {
+        "nome": "CORLEONE",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 479900.0,
+        "empreendimentos": {
+          "GREEN EMBIRA": 1
         }
       },
       {
@@ -1225,6 +1361,24 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
+        "nome": "LUCIENE",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 287000.0,
+        "empreendimentos": {
+          "VIBE": 1
+        }
+      },
+      {
+        "nome": "MONCAO",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 285000.0,
+        "empreendimentos": {
+          "VIBE": 1
+        }
+      },
+      {
         "nome": "RONEI",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -1261,6 +1415,15 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
+        "nome": "DAYANA",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 254900.0,
+        "empreendimentos": {
+          "GRID": 1
+        }
+      },
+      {
         "nome": "ROPZ",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -1282,17 +1445,40 @@ const RANKING_DATA_GERAL = {
     "gerentes": [
       {
         "nome": "MOURA",
-        "pontos": 67.5,
-        "vendas": 5.5,
-        "vgv": 2345400.0,
+        "pontos": 77.5,
+        "vendas": 6.5,
+        "vgv": 2620400.0,
         "empreendimentos": {
           "NOW": 1,
           "LIKE": 1,
           "PARK": 1,
+          "FLOW": 1,
           "WIN": 1,
           "GREEN EMBIRA": 2
         },
         "campeoVendasSemana": true
+      },
+      {
+        "nome": "HUDSON",
+        "pontos": 45.0,
+        "vendas": 3.0,
+        "vgv": 989799.0,
+        "empreendimentos": {
+          "VITA": 1,
+          "SOUL": 1,
+          "TEE": 1
+        }
+      },
+      {
+        "nome": "OTTO",
+        "pontos": 40.0,
+        "vendas": 4.0,
+        "vgv": 1124690.81,
+        "empreendimentos": {
+          "HYPE STYLE": 1,
+          "INOV": 2,
+          "GRID": 1
+        }
       },
       {
         "nome": "SOUZA",
@@ -1327,16 +1513,6 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
-        "nome": "OTTO",
-        "pontos": 30.0,
-        "vendas": 3.0,
-        "vgv": 869790.81,
-        "empreendimentos": {
-          "HYPE STYLE": 1,
-          "INOV": 2
-        }
-      },
-      {
         "nome": "RAKKI",
         "pontos": 25.0,
         "vendas": 1.0,
@@ -1355,22 +1531,22 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
+        "nome": "DURANT",
+        "pontos": 25.0,
+        "vendas": 2.0,
+        "vgv": 495000.0,
+        "empreendimentos": {
+          "VIBE": 1,
+          "VERO ENCANTO": 1
+        }
+      },
+      {
         "nome": "SERAMIS",
         "pontos": 20.0,
         "vendas": 2.0,
         "vgv": 1420000.0,
         "empreendimentos": {
           "WIN": 2
-        }
-      },
-      {
-        "nome": "HUDSON",
-        "pontos": 20.0,
-        "vendas": 2.0,
-        "vgv": 719800.0,
-        "empreendimentos": {
-          "VITA": 1,
-          "TEE": 1
         }
       },
       {
@@ -1458,6 +1634,15 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
+        "nome": "PANDORA",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 479900.0,
+        "empreendimentos": {
+          "GREEN EMBIRA": 1
+        }
+      },
+      {
         "nome": "ELDA",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -1530,6 +1715,15 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
+        "nome": "ROGER",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 287000.0,
+        "empreendimentos": {
+          "VIBE": 1
+        }
+      },
+      {
         "nome": "GAVA",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -1551,16 +1745,17 @@ const RANKING_DATA_GERAL = {
     "diretores": [
       {
         "nome": "LUPETTI",
-        "pontos": 152.5,
-        "vendas": 12.5,
-        "vgv": 4680811.0,
+        "pontos": 187.5,
+        "vendas": 14.5,
+        "vgv": 5225810.0,
         "empreendimentos": {
           "NOW": 1,
           "GREEN EMBIRA": 4,
           "LIKE": 1,
           "PARK": 1,
           "VITA": 1,
-          "FLOW": 1,
+          "FLOW": 2,
+          "SOUL": 1,
           "WIN": 1,
           "HYPE STYLE": 1,
           "BUONO": 1,
@@ -1599,37 +1794,51 @@ const RANKING_DATA_GERAL = {
       },
       {
         "nome": "THAIS",
-        "pontos": 55.0,
-        "vendas": 4.0,
-        "vgv": 1454600.0,
+        "pontos": 80.0,
+        "vendas": 6.0,
+        "vgv": 1949600.0,
         "empreendimentos": {
           "FREE": 1,
           "LIKE": 1,
           "HYPE STYLE": 1,
-          "GRID": 1
+          "GRID": 1,
+          "VIBE": 1,
+          "VERO ENCANTO": 1
         }
       },
       {
         "nome": "PITER",
-        "pontos": 50.0,
-        "vendas": 5.0,
-        "vgv": 1523590.81,
+        "pontos": 60.0,
+        "vendas": 6.0,
+        "vgv": 1778490.81,
         "empreendimentos": {
           "HYPE STYLE": 1,
           "EVO": 1,
           "TEE": 1,
-          "INOV": 2
+          "INOV": 2,
+          "GRID": 1
         }
       },
       {
         "nome": "JULLY",
-        "pontos": 30.0,
-        "vendas": 3.0,
-        "vgv": 1142400.0,
+        "pontos": 40.0,
+        "vendas": 4.0,
+        "vgv": 1429400.0,
         "empreendimentos": {
           "HYPE STYLE": 1,
+          "VIBE": 1,
           "VISION": 1,
           "NEO": 1
+        }
+      },
+      {
+        "nome": "SERGIOALMEIDA",
+        "pontos": 30.0,
+        "vendas": 3.0,
+        "vgv": 1184700.0,
+        "empreendimentos": {
+          "EVO": 2,
+          "GREEN EMBIRA": 1
         }
       },
       {
@@ -1640,15 +1849,6 @@ const RANKING_DATA_GERAL = {
         "empreendimentos": {
           "TEE": 1,
           "TOPIC": 1
-        }
-      },
-      {
-        "nome": "SERGIOALMEIDA",
-        "pontos": 20.0,
-        "vendas": 2.0,
-        "vgv": 704800.0,
-        "empreendimentos": {
-          "EVO": 2
         }
       },
       {
@@ -3479,6 +3679,15 @@ const RANKING_DATA_S3 = {
         }
       },
       {
+        "nome": "MAJU+",
+        "pontos": 25.0,
+        "vendas": 1.0,
+        "vgv": 349900.0,
+        "empreendimentos": {
+          "RANGEL": 1
+        }
+      },
+      {
         "nome": "CIRO+",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -3488,12 +3697,57 @@ const RANKING_DATA_S3 = {
         }
       },
       {
+        "nome": "MILADY+TF+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 301880.23,
+        "empreendimentos": {
+          "FLOW": 1
+        }
+      },
+      {
+        "nome": "MARTA+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 275000.0,
+        "empreendimentos": {
+          "FLOW": 1
+        }
+      },
+      {
         "nome": "THUNDER+F+",
         "pontos": 10.0,
         "vendas": 1.0,
         "vgv": 266500.0,
         "empreendimentos": {
           "HYPE STYLE": 1
+        }
+      },
+      {
+        "nome": "SANDY+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 254900.0,
+        "empreendimentos": {
+          "FAST": 1
+        }
+      },
+      {
+        "nome": "MENEZES+B+",
+        "pontos": 5.0,
+        "vendas": 0.5,
+        "vgv": 159950.0,
+        "empreendimentos": {
+          "VERO HARMONIA": 1
+        }
+      },
+      {
+        "nome": "NAIROBI+",
+        "pontos": 5.0,
+        "vendas": 0.5,
+        "vgv": 159950.0,
+        "empreendimentos": {
+          "VERO HARMONIA": 1
         }
       },
       {
@@ -3550,12 +3804,39 @@ const RANKING_DATA_S3 = {
         }
       },
       {
+        "nome": "PONTES+",
+        "pontos": 25.0,
+        "vendas": 1.0,
+        "vgv": 349900.0,
+        "empreendimentos": {
+          "RANGEL": 1
+        }
+      },
+      {
         "nome": "BISMARCK+",
         "pontos": 10.0,
         "vendas": 1.0,
         "vgv": 339300.0,
         "empreendimentos": {
           "EVO": 1
+        }
+      },
+      {
+        "nome": "MATTES+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 319900.0,
+        "empreendimentos": {
+          "VERO HARMONIA": 1
+        }
+      },
+      {
+        "nome": "LORD+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 301880.23,
+        "empreendimentos": {
+          "FLOW": 1
         }
       },
       {
@@ -3568,6 +3849,15 @@ const RANKING_DATA_S3 = {
         }
       },
       {
+        "nome": "JIMMY+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 275000.0,
+        "empreendimentos": {
+          "FLOW": 1
+        }
+      },
+      {
         "nome": "GUEDES+",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -3575,36 +3865,58 @@ const RANKING_DATA_S3 = {
         "empreendimentos": {
           "HYPE STYLE": 1
         }
+      },
+      {
+        "nome": "ERIMAR+",
+        "pontos": 10.0,
+        "vendas": 1.0,
+        "vgv": 254900.0,
+        "empreendimentos": {
+          "FAST": 1
+        }
       }
     ],
     "diretores": [
       {
+        "nome": "FLORIANO+",
+        "pontos": 50.0,
+        "vendas": 4.0,
+        "vgv": 1139700.0,
+        "empreendimentos": {
+          "TEE": 1,
+          "FAST": 1,
+          "FLOW": 1,
+          "VERO HARMONIA": 1
+        },
+        "campeoVendasSemana": true
+      },
+      {
         "nome": "HONORATO+",
-        "pontos": 45.0,
+        "pontos": 35.0,
         "vendas": 2.0,
         "vgv": 636400.0,
         "empreendimentos": {
           "FREE": 1,
           "HYPE STYLE": 1
-        },
-        "campeoVendasSemana": true
-      },
-      {
-        "nome": "DELUCA+",
-        "pontos": 10.0,
-        "vendas": 1.0,
-        "vgv": 339300.0,
-        "empreendimentos": {
-          "EVO": 1
         }
       },
       {
-        "nome": "FLORIANO+",
-        "pontos": 10.0,
+        "nome": "BRASIL+",
+        "pontos": 25.0,
         "vendas": 1.0,
-        "vgv": 289900.0,
+        "vgv": 349900.0,
         "empreendimentos": {
-          "TEE": 1
+          "RANGEL": 1
+        }
+      },
+      {
+        "nome": "DELUCA+",
+        "pontos": 20.0,
+        "vendas": 2.0,
+        "vgv": 641180.23,
+        "empreendimentos": {
+          "EVO": 1,
+          "FLOW": 1
         }
       }
     ]
@@ -3618,6 +3930,15 @@ const RANKING_DATA_S3 = {
         "vgv": 290100.1,
         "empreendimentos": {
           "BUONO": 1
+        }
+      },
+      {
+        "nome": "VERUSKA",
+        "pontos": 15.0,
+        "vendas": 1.0,
+        "vgv": 210000.0,
+        "empreendimentos": {
+          "VERO ENCANTO": 1
         }
       },
       {
@@ -3657,6 +3978,15 @@ const RANKING_DATA_S3 = {
         }
       },
       {
+        "nome": "DURANT",
+        "pontos": 15.0,
+        "vendas": 1.0,
+        "vgv": 210000.0,
+        "empreendimentos": {
+          "VERO ENCANTO": 1
+        }
+      },
+      {
         "nome": "OAKLEY",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -3677,6 +4007,15 @@ const RANKING_DATA_S3 = {
         }
       },
       {
+        "nome": "THAIS",
+        "pontos": 15.0,
+        "vendas": 1.0,
+        "vgv": 210000.0,
+        "empreendimentos": {
+          "VERO ENCANTO": 1
+        }
+      },
+      {
         "nome": "JULLY",
         "pontos": 10.0,
         "vendas": 1.0,
@@ -3694,7 +4033,7 @@ const CAMPEOS_S3 = {
       "corretores": [],
       "gerentes": [],
       "diretores": [
-        "HONORATO+"
+        "FLORIANO+"
       ]
     },
     "indicacoes": [
@@ -3732,7 +4071,7 @@ const RANKING_DATA = RANKING_DATA_GERAL;
 const CAMPEOS = CAMPEOS_GERAL;
 
 // ============================================================
-//  COPA ECON 2026 — Junho. Conta SO vendas DR (DNR nao entra).
+//  COPA ECON 2026 — Junho. Inclusao = CONFIRMADO + Nº CONTRATO (com numero).
 //  Semanas 1 e 2 congeladas. Semana 3 = 15-21. Geral = 01-21.
 //  Geral (mes) NAO computa indicacao ainda. Imobiliarias nao pontuam.
 // ============================================================
