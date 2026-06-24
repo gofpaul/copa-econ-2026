@@ -99,15 +99,6 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
-        "nome": "SAYRE+",
-        "pontos": 25.0,
-        "vendas": 1.0,
-        "vgv": 229900.0,
-        "empreendimentos": {
-          "RANGEL": 1
-        }
-      },
-      {
         "nome": "MEIRELES+",
         "pontos": 20.0,
         "vendas": 2.0,
@@ -620,18 +611,6 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
-        "nome": "ESTER+",
-        "pontos": 70.0,
-        "vendas": 4.0,
-        "vgv": 1409600.0,
-        "empreendimentos": {
-          "LINK": 1,
-          "GREEN EMBIRA": 1,
-          "FREE": 1,
-          "RANGEL": 1
-        }
-      },
-      {
         "nome": "LUCATELLI+",
         "pontos": 60.0,
         "vendas": 3.0,
@@ -651,6 +630,17 @@ const RANKING_DATA_GERAL = {
           "LINE": 1,
           "VERO ENCANTO": 1,
           "VERO HARMONIA": 1
+        }
+      },
+      {
+        "nome": "ESTER+",
+        "pontos": 45.0,
+        "vendas": 3.0,
+        "vgv": 1179700.0,
+        "empreendimentos": {
+          "LINK": 1,
+          "GREEN EMBIRA": 1,
+          "FREE": 1
         }
       },
       {
@@ -1026,22 +1016,6 @@ const RANKING_DATA_GERAL = {
         }
       },
       {
-        "nome": "HONORATO+",
-        "pontos": 115.0,
-        "vendas": 8.0,
-        "vgv": 2622800.0,
-        "empreendimentos": {
-          "MANACÁ": 1,
-          "LINK": 1,
-          "FLOW": 1,
-          "GREEN EMBIRA": 1,
-          "NORT": 1,
-          "FREE": 1,
-          "HYPE STYLE": 1,
-          "RANGEL": 1
-        }
-      },
-      {
         "nome": "TOME+",
         "pontos": 110.0,
         "vendas": 11.0,
@@ -1055,6 +1029,21 @@ const RANKING_DATA_GERAL = {
           "GRID": 1,
           "INOV": 1,
           "NEW VILA EMA": 1
+        }
+      },
+      {
+        "nome": "HONORATO+",
+        "pontos": 90.0,
+        "vendas": 7.0,
+        "vgv": 2392900.0,
+        "empreendimentos": {
+          "MANACÁ": 1,
+          "LINK": 1,
+          "FLOW": 1,
+          "GREEN EMBIRA": 1,
+          "NORT": 1,
+          "FREE": 1,
+          "HYPE STYLE": 1
         }
       },
       {
@@ -3857,15 +3846,6 @@ const RANKING_DATA_S3 = {
         }
       },
       {
-        "nome": "SAYRE+",
-        "pontos": 25.0,
-        "vendas": 1.0,
-        "vgv": 229900.0,
-        "empreendimentos": {
-          "RANGEL": 1
-        }
-      },
-      {
         "nome": "COMARCA+",
         "pontos": 20.0,
         "vendas": 1.0,
@@ -4022,16 +4002,6 @@ const RANKING_DATA_S3 = {
     ],
     "gerentes": [
       {
-        "nome": "ESTER+",
-        "pontos": 50.0,
-        "vendas": 2.0,
-        "vgv": 599800.0,
-        "empreendimentos": {
-          "FREE": 1,
-          "RANGEL": 1
-        }
-      },
-      {
         "nome": "BODALO+",
         "pontos": 40.0,
         "vendas": 3.0,
@@ -4042,6 +4012,15 @@ const RANKING_DATA_S3 = {
           "HYPE STYLE": 1
         },
         "campeoVendasSemana": true
+      },
+      {
+        "nome": "ESTER+",
+        "pontos": 25.0,
+        "vendas": 1.0,
+        "vgv": 369900.0,
+        "empreendimentos": {
+          "FREE": 1
+        }
       },
       {
         "nome": "PONTES+",
@@ -4160,17 +4139,6 @@ const RANKING_DATA_S3 = {
         "campeoVendasSemana": true
       },
       {
-        "nome": "HONORATO+",
-        "pontos": 60.0,
-        "vendas": 3.0,
-        "vgv": 866300.0,
-        "empreendimentos": {
-          "FREE": 1,
-          "HYPE STYLE": 1,
-          "RANGEL": 1
-        }
-      },
-      {
         "nome": "BRASIL+",
         "pontos": 55.0,
         "vendas": 4.0,
@@ -4179,6 +4147,16 @@ const RANKING_DATA_S3 = {
           "RANGEL": 1,
           "INOV": 2,
           "TEE": 1
+        }
+      },
+      {
+        "nome": "HONORATO+",
+        "pontos": 35.0,
+        "vendas": 2.0,
+        "vgv": 636400.0,
+        "empreendimentos": {
+          "FREE": 1,
+          "HYPE STYLE": 1
         }
       },
       {
@@ -4430,7 +4408,7 @@ const CAMPEOS = CAMPEOS_GERAL;
 //  COPA ECON 2026 — Junho. Fonte: Controle_Geral_Vendas_2026 (VENDAS 2026).
 //  Inclusao = CONFIRMADO + Nº CONTRATO. Semanas 1-2 congeladas.
 //  Semana 3 = 15-21. Geral = 01-21. Pronto: + Ocean View/Ton/Line.
-//  Geral sem indicacao ainda. Imobiliarias nao pontuam.
+//  Geral sem indicacao ainda. Imobiliarias/parceiros (Sayre+) nao pontuam.
 // ============================================================
 const SEMANAS = {
   "geral":    { label: "Geral do mês",        periodo: "01 a 21 de junho", ordem: 0, ranking: RANKING_DATA_GERAL, campeoes: CAMPEOS_GERAL },
