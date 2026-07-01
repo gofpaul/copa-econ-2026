@@ -5673,6 +5673,14 @@ const RANKING_DATA_S4 = {
         "empreendimentos": {
           "HYPE STYLE": 1
         }
+      },
+      {
+        "nome": "ZORUM+",
+        "pontos": 5.0,
+        "vendas": 0.0,
+        "vgv": 0.0,
+        "empreendimentos": {},
+        "indicacaoSemana": true
       }
     ],
     "gerentes": [
@@ -6003,6 +6011,16 @@ const RANKING_DATA_S4 = {
         }
       },
       {
+        "nome": "ROCUMBACK",
+        "pontos": 15.0,
+        "vendas": 1.0,
+        "vgv": 254900.0,
+        "empreendimentos": {
+          "FAST": 1
+        },
+        "indicacaoSemana": true
+      },
+      {
         "nome": "ROSA",
         "pontos": 12.5,
         "vendas": 0.5,
@@ -6108,15 +6126,6 @@ const RANKING_DATA_S4 = {
         "vgv": 259900.0,
         "empreendimentos": {
           "HYPE STYLE": 1
-        }
-      },
-      {
-        "nome": "ROCUMBACK",
-        "pontos": 10.0,
-        "vendas": 1.0,
-        "vgv": 254900.0,
-        "empreendimentos": {
-          "FAST": 1
         }
       },
       {
@@ -6326,7 +6335,9 @@ const CAMPEOS_S4 = {
         "FLORIANO+"
       ]
     },
-    "indicacoes": []
+    "indicacoes": [
+      "ZORUM+"
+    ]
   },
   "vendas": {
     "vendasSemana": {
@@ -6340,7 +6351,9 @@ const CAMPEOS_S4 = {
         "LUPETTI"
       ]
     },
-    "indicacoes": []
+    "indicacoes": [
+      "ROCUMBACK"
+    ]
   }
 };
 
